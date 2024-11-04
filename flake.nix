@@ -19,10 +19,26 @@
       system = "aarch64-darwin";
       modules = [
         ./configuration.nix
-        { system.configurationRevision = self.rev or self.dirtyRev or null; }
+        {
+          # The platform the configuration will be used on.
+          nixpkgs.hostPlatform = "aarch64-darwin";
+
+          # Auto upgrade nix package and the daemon service.
+          services.nix-daemon.enable = true;
+          # nix.package = pkgs.nix;
+
+          # Necessary for using flakes on this system.
+          nix.settings.experimental-features = "nix-command flakes";
+
+          nixpkgs.config.allowUnfree = true;
+          system.configurationRevision = self.rev or self.dirtyRev or null;
+        }
         home-manager.darwinModules.home-manager
         {
-          # home-manager.useUserService = true; # Added by patch above ^
+          users.users.urio = {
+            name = "urio";
+            home = "/Users/urio";
+          };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backupnix";
