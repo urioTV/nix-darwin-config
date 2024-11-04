@@ -1,4 +1,11 @@
-{ inputs, config, pkgs, lib, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   programs = {
     git = {
       enable = true;
@@ -9,8 +16,10 @@
       enable = true;
       antidote = {
         enable = false;
-        plugins =
-          [ "zsh-users/zsh-autosuggestions" "zsh-users/zsh-completions" ];
+        plugins = [
+          "zsh-users/zsh-autosuggestions"
+          "zsh-users/zsh-completions"
+        ];
       };
       prezto = {
         enable = true;
@@ -34,24 +43,28 @@
       };
 
     };
-    eza = { enable = true; };
-    bat = { enable = true; };
+    eza = {
+      enable = true;
+    };
+    bat = {
+      enable = true;
+    };
     starship = {
       enable = true;
       enableZshIntegration = true;
-      # settings = {
-      #   nix_shell = {
-      #     disabled = false;
-      #     impure_msg = "";
-      #     symbol = "";
-      #     format = "[$symbol$state]($style) ";
-      #   };
-      #   shlvl = {
-      #     disabled = false;
-      #     symbol = "λ ";
-      #   };
-      #   haskell.symbol = " ";
-      # };
+      settings = {
+        nix_shell = {
+          disabled = false;
+          impure_msg = "";
+          symbol = "";
+          format = "[$symbol$state]($style) ";
+        };
+        shlvl = {
+          disabled = false;
+          symbol = "λ ";
+        };
+        haskell.symbol = " ";
+      };
     };
     yazi = {
       enable = true;
