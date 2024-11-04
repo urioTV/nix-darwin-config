@@ -34,6 +34,15 @@
     open-sans
   ];
 
+  nix.settings.auto-optimise-store = true;
+
+
+  nix.gc = {
+    automatic = true;
+    interval = { Weekday = 0; Hour = 0; Minute = 0; };
+    options = "--delete-older-than 3d";
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
