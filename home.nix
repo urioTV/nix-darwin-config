@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = [ ./home ];
@@ -7,7 +13,14 @@
   # nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  
+
+  home.activation = {
+    resetLaunchPad = lib.hm.dag.entryAfter [ "installPackages" ] ''
+      echo "Restarting Dock to refresh Launchpad..."
+      run /usr/bin/defaults write com.apple.dock ResetLaunchPad -bool true && /usr/bin/killall Dock
+    '';
+  };
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

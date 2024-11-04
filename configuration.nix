@@ -1,15 +1,31 @@
-{ pkgs, self, ... }:
+{
+  pkgs,
+  self,
+  lib,
+  ...
+}:
 {
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     micro
-    vscode
     nixfmt-rfc-style
     fastfetch
     vlc-bin
   ];
+
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "uninstall";
+      upgrade = true;
+    };
+    casks = [
+      "visual-studio-code"
+    ];
+  };
 
   # Enable alternative shell support in nix-darwin.
   # programs.fish.enable = true;
@@ -36,10 +52,13 @@
 
   nix.settings.auto-optimise-store = true;
 
-
   nix.gc = {
     automatic = true;
-    interval = { Weekday = 0; Hour = 0; Minute = 0; };
+    interval = {
+      Weekday = 0;
+      Hour = 0;
+      Minute = 0;
+    };
     options = "--delete-older-than 3d";
   };
 

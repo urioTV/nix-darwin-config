@@ -40,6 +40,7 @@
 
             nixpkgs.config.allowUnfree = true;
             system.configurationRevision = self.rev or self.dirtyRev or null;
+
           }
           home-manager.darwinModules.home-manager
           {
