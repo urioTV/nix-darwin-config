@@ -5,48 +5,36 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.micro
-        pkgs.vscode
-        ];
-
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
-
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-	  nixpkgs.config.allowUnfree = true;
-	  
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      security.pam.enableSudoTouchIdAuth = true;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
-    };
-  in
-  {
+  outputs = { self, nix-darwin, nixpkgs, home-manager, ... }@inputs: {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."MacBook-Air-Konrad" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      system = "aarch64-darwin";
+      modules = [
+        ./configuration.nix
+        { system.configurationRevision = self.rev or self.dirtyRev or null; }
+        home-manager.darwinModules.home-manager
+        {
+          # home-manager.useUserService = true; # Added by patch above ^
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backupnix";
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.sharedModules = [
+
+          ];
+          home-manager.users.urio = { imports = [ ./home.nix ]; };
+          home-manager.users.urio.home.username = "urio";
+          home-manager.users.urio.home.homeDirectory = "/Users/urio";
+        }
+      ];
     };
 
     # Expose the package set, including overlays, for convenience.
