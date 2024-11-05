@@ -12,6 +12,8 @@
     micro
     nixfmt-rfc-style
     fastfetch
+    podman
+    prismlauncher
   ];
 
   homebrew = {
@@ -24,6 +26,7 @@
     casks = [
       "visual-studio-code"
       "vlc"
+      "qbittorrent"
     ];
   };
 
