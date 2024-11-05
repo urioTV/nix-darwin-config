@@ -12,7 +12,6 @@
     micro
     nixfmt-rfc-style
     fastfetch
-    vlc-bin
   ];
 
   homebrew = {
@@ -24,6 +23,7 @@
     };
     casks = [
       "visual-studio-code"
+      "vlc"
     ];
   };
 

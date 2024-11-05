@@ -17,7 +17,7 @@
   home.activation = {
     resetLaunchPad = lib.hm.dag.entryAfter [ "installPackages" ] ''
       echo "Restarting Dock to refresh Launchpad..."
-      run /usr/bin/defaults write com.apple.dock ResetLaunchPad -bool true && /usr/bin/killall Dock
+      run /usr/bin/killall Dock
     '';
   };
 
