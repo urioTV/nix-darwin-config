@@ -39,7 +39,7 @@
 
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "micro";
   };
 
   # Let Home Manager install and manage itself.

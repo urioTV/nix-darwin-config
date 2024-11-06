@@ -14,6 +14,9 @@
     fastfetch
     podman
     prismlauncher
+    ffmpeg_7-full
+    localsend
+    ext4fuse
   ];
 
   homebrew = {
@@ -26,7 +29,9 @@
     casks = [
       "visual-studio-code"
       "vlc"
-      "qbittorrent"
+      "transmission"
+      "betterzip"
+      "macfuse"
     ];
   };
 
