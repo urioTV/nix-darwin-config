@@ -17,6 +17,9 @@
     ffmpeg_7-full
     localsend
     ext4fuse
+    cabextract
+    p7zip
+    zenity
   ];
 
   homebrew = {
@@ -32,6 +35,7 @@
       "transmission"
       "betterzip"
       "macfuse"
+      "handbrake"
     ];
   };
 
