@@ -32,10 +32,12 @@
     casks = [
       "visual-studio-code"
       "vlc"
-      "transmission"
+      "qbittorrent"
       "betterzip"
+      "keka"
       "macfuse"
       "handbrake"
+      "whisky"
     ];
   };
 
