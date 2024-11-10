@@ -66,9 +66,5 @@
         haskell.symbol = " ";
       };
     };
-    yazi = {
-      enable = true;
-      enableZshIntegration = true;
-    };
   };
 }

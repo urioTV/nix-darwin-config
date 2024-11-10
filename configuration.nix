@@ -38,13 +38,9 @@
       "macfuse"
       "handbrake"
       "whisky"
+      "warp"
     ];
   };
-
-  # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
-
-  # Set Git commit hash for darwin-version.
 
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -64,7 +60,14 @@
     open-sans
   ];
 
-  nix.settings.auto-optimise-store = true;
+  nix.optimise = {
+    automatic = true;
+    interval = {
+      Weekday = 0;
+      Hour = 0;
+      Minute = 0;
+    };
+  };
 
   nix.gc = {
     automatic = true;
@@ -79,4 +82,6 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
+
+  system.defaults.NSGlobalDomain.NSWindowShouldDragOnGesture = true;
 }
