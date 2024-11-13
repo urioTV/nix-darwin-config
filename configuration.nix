@@ -39,6 +39,7 @@
       "handbrake"
       "whisky"
       "warp"
+      # "hyperkey"
     ];
   };
 
