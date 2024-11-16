@@ -20,6 +20,8 @@
     cabextract
     p7zip
     zenity
+    rm-improved
+    tldr
   ];
 
   homebrew = {
@@ -85,4 +87,6 @@
   system.stateVersion = 5;
 
   system.defaults.NSGlobalDomain.NSWindowShouldDragOnGesture = true;
+  system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
+  system.defaults.finder.AppleShowAllFiles = true;
 }
