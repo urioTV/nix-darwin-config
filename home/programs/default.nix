@@ -66,5 +66,9 @@
         haskell.symbol = " ";
       };
     };
+    bun = {
+      enable = true;
+      enableGitIntegration = true;
+    };
   };
 }

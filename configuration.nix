@@ -22,6 +22,7 @@
     zenity
     rm-improved
     tldr
+    ollama
   ];
 
   homebrew = {
@@ -42,6 +43,12 @@
       "whisky"
       "warp"
       # "hyperkey"
+      "obsidian"
+      "syncthing"
+    ];
+    brews = [
+      "python@3.11"
+      "pipx"
     ];
   };
 
@@ -87,6 +94,6 @@
   system.stateVersion = 5;
 
   system.defaults.NSGlobalDomain.NSWindowShouldDragOnGesture = true;
-  system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
-  system.defaults.finder.AppleShowAllFiles = true;
+  system.defaults.NSGlobalDomain.AppleShowAllFiles = false;
+  system.defaults.finder.AppleShowAllFiles = false;
 }
