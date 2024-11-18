@@ -15,7 +15,6 @@
     podman
     prismlauncher
     ffmpeg_7-full
-    localsend
     ext4fuse
     cabextract
     p7zip
@@ -45,6 +44,8 @@
       # "hyperkey"
       "obsidian"
       "syncthing"
+      "google-drive"
+      "localsend"
     ];
     brews = [
       "python@3.11"
