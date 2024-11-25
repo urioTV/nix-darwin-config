@@ -46,6 +46,7 @@
       "syncthing"
       "google-drive"
       "localsend"
+      "element"
     ];
     brews = [
       "python@3.11"
