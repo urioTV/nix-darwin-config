@@ -35,7 +35,7 @@
       "visual-studio-code"
       "vlc"
       "qbittorrent"
-      "betterzip"
+      # "betterzip"
       "keka"
       "macfuse"
       "handbrake"
@@ -62,7 +62,8 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-emoji
-    nerdfonts
+    nerd-fonts.hack
+    nerd-fonts.open-dyslexic
     jetbrains-mono
     font-awesome
     ubuntu_font_family
