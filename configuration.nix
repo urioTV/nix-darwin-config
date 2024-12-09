@@ -47,6 +47,7 @@
       "google-drive"
       "localsend"
       "element"
+      "protonvpn"
     ];
     brews = [
       "python@3.11"

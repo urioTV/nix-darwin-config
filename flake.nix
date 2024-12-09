@@ -23,7 +23,7 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#simple
-      darwinConfigurations."MacBook-Air-Konrad" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./configuration.nix
