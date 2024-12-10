@@ -39,7 +39,7 @@
       "keka"
       "macfuse"
       "handbrake"
-      "whisky"
+      # "whisky"
       "warp"
       # "hyperkey"
       "obsidian"
