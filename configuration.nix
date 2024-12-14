@@ -44,7 +44,7 @@
       # "hyperkey"
       "obsidian"
       "syncthing"
-      "google-drive"
+      # "google-drive"
       "localsend"
       "element"
       "protonvpn"
