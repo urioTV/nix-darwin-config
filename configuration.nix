@@ -48,6 +48,7 @@
       "localsend"
       "element"
       "protonvpn"
+      "spotify"
     ];
     brews = [
       "python@3.11"
