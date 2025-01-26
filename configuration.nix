@@ -49,6 +49,7 @@
       "element"
       "protonvpn"
       "spotify"
+      "zerotier-one"
     ];
     brews = [
       "python@3.11"
