@@ -22,7 +22,12 @@
     rm-improved
     tldr
     ollama
+    nixfmt-rfc-style
+    kubectl
+    kubernetes-helm
   ];
+  # environment.shells = [ pkgs.nushell ];
+  # users.users.urio.shell = pkgs.nushell;
 
   homebrew = {
     enable = true;
