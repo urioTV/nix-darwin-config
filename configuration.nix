@@ -40,7 +40,6 @@
       "visual-studio-code"
       "vlc"
       "qbittorrent"
-      # "betterzip"
       "keka"
       "macfuse"
       "handbrake"
@@ -49,12 +48,11 @@
       # "hyperkey"
       "obsidian"
       "syncthing"
-      # "google-drive"
       "localsend"
       "element"
       "protonvpn"
       "spotify"
-      # "zerotier-one"
+      "tailscale"
     ];
     brews = [
       "python@3.11"
