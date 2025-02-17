@@ -10,6 +10,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lix-module = {
+      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,14 +23,14 @@
       nix-darwin,
       nixpkgs,
       home-manager,
+      lix-module,
       ...
     }@inputs:
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#simple
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
+          lix-module.nixosModules.default
           ./configuration.nix
           {
             # The platform the configuration will be used on.
