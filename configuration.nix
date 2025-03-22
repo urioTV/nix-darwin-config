@@ -53,7 +53,7 @@
       "protonvpn"
       "spotify"
       "tailscale"
-      # "zen-browser"
+      "zen-browser"
     ];
     brews = [
       "python@3.11"
@@ -61,7 +61,7 @@
     ];
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   fonts.packages = with pkgs; [
     noto-fonts
