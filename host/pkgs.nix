@@ -1,0 +1,27 @@
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
+    micro
+    nixfmt-rfc-style
+    fastfetch
+    podman
+    prismlauncher
+    ffmpeg_7-full
+    ext4fuse
+    cabextract
+    p7zip
+    zenity
+    rm-improved
+    tldr
+    ollama
+    nixfmt-rfc-style
+    kubectl
+    kubernetes-helm
+    nodejs
+  ];
+}

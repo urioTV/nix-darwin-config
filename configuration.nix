@@ -5,80 +5,11 @@
   ...
 }:
 {
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    micro
-    nixfmt-rfc-style
-    fastfetch
-    podman
-    prismlauncher
-    ffmpeg_7-full
-    ext4fuse
-    cabextract
-    p7zip
-    zenity
-    rm-improved
-    tldr
-    ollama
-    nixfmt-rfc-style
-    kubectl
-    kubernetes-helm
+  imports = [
+    ./host
   ];
-  # environment.shells = [ pkgs.nushell ];
-  # users.users.urio.shell = pkgs.nushell;
-
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "uninstall";
-      upgrade = true;
-    };
-    casks = [
-      "visual-studio-code"
-      "vlc"
-      "qbittorrent"
-      "keka"
-      "macfuse"
-      "handbrake"
-      # "whisky"
-      "warp"
-      # "hyperkey"
-      "obsidian"
-      "syncthing"
-      "localsend"
-      "element"
-      "protonvpn"
-      "spotify"
-      "tailscale"
-      "zen-browser"
-    ];
-    brews = [
-      "python@3.11"
-      "pipx"
-    ];
-  };
 
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-extra
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-emoji
-    nerd-fonts.hack
-    nerd-fonts.open-dyslexic
-    jetbrains-mono
-    font-awesome
-    ubuntu_font_family
-    baekmuk-ttf
-    nerd-font-patcher
-    corefonts
-    open-sans
-  ];
 
   nix.optimise = {
     automatic = true;
