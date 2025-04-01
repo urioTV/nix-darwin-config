@@ -2,8 +2,8 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.769969";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.769969";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -13,7 +13,7 @@
     };
 
     lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=stable";
+      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.92";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
