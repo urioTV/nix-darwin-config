@@ -10,7 +10,7 @@
     nixfmt-rfc-style
     fastfetch
     podman
-    prismlauncher
+    # prismlauncher
     ffmpeg_7-full
     ext4fuse
     cabextract
