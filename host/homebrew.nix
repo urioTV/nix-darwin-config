@@ -29,7 +29,7 @@
       "protonvpn"
       "spotify"
       "tailscale"
-      "zen-browser"
+      "zen"
     ];
     brews = [
       "python@3.11"
