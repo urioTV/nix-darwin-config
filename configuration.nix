@@ -8,6 +8,7 @@
   imports = [
     ./host
   ];
+  system.primaryUser = "urio";
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
