@@ -20,16 +20,15 @@
       "macfuse"
       "handbrake"
       # "whisky"
-      "warp"
       # "hyperkey"
       "obsidian"
       "syncthing"
       "localsend"
-      "element"
       "protonvpn"
       "spotify"
       "tailscale"
       "zen"
+      "utm"
     ];
     brews = [
       "python@3.11"
