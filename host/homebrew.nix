@@ -29,6 +29,7 @@
       "tailscale"
       "zen"
       "utm"
+      "rustdesk"
     ];
     brews = [
       "python@3.11"
