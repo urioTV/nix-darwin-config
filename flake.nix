@@ -66,14 +66,14 @@
             ];
             home-manager.users.urio = {
               imports = [ ./home.nix ];
+              home.username = "urio";
+              home.homeDirectory = "/Users/urio";
             };
-            home-manager.users.urio.home.username = "urio";
-            home-manager.users.urio.home.homeDirectory = "/Users/urio";
           }
         ];
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."MacBook-Air-Konrad".pkgs;
+      darwinPackages = self.darwinConfigurations."MacBook-Air-Urio".pkgs;
     };
 }
