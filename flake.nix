@@ -4,8 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.769969";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -51,23 +53,25 @@
           }
           home-manager.darwinModules.home-manager
           {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backupnix";
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+              sharedModules = [
+
+              ];
+              users.urio = {
+                imports = [ ./home.nix ];
+                home.username = "urio";
+                home.homeDirectory = "/Users/urio";
+              };
+            };
             users.users.urio = {
               name = "urio";
               home = "/Users/urio";
-            };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backupnix";
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-            home-manager.sharedModules = [
-
-            ];
-            home-manager.users.urio = {
-              imports = [ ./home.nix ];
-              home.username = "urio";
-              home.homeDirectory = "/Users/urio";
             };
           }
         ];

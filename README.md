@@ -41,7 +41,7 @@
  
 
  ```bash
- darwin-rebuild switch --flake .#MacBook-Air-Urio
+ sudo darwin-rebuild switch --flake .#MacBook-Air-Urio
  ```
  
 
