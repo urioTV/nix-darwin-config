@@ -28,7 +28,6 @@
       "spotify"
       "tailscale"
       "zen"
-      "utm"
       "rustdesk"
     ];
     brews = [
