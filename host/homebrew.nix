@@ -29,6 +29,7 @@
       "tailscale-app"
       "zen"
       "rustdesk"
+      "lm-studio"
     ];
     brews = [
       "python@3.11"
