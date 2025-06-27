@@ -35,6 +35,7 @@
       "python@3.11"
       "pipx"
       "graphviz"
+      "gemini-cli"
     ];
   };
 }
