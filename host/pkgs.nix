@@ -23,5 +23,7 @@
     kubectl
     kubernetes-helm
     nodejs
+    nil
+    nixd
   ];
 }

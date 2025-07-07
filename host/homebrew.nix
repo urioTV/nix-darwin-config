@@ -30,6 +30,8 @@
       "zen"
       "rustdesk"
       "lm-studio"
+      "microsoft-edge"
+      "zed"
     ];
     brews = [
       "python@3.11"
