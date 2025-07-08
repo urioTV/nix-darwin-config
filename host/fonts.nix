@@ -20,5 +20,9 @@
     nerd-font-patcher
     corefonts
     open-sans
+    # inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
+    # inputs.apple-fonts.packages.${pkgs.system}.sf-compact-nerd
+    # inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
+    # inputs.apple-fonts.packages.${pkgs.system}.ny-nerd
   ];
 }

@@ -14,9 +14,14 @@
     };
 
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # apple-fonts = {
+    #   url = "github:Lyndeno/apple-fonts.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -31,6 +36,9 @@
     {
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           lix-module.nixosModules.default
           ./configuration.nix
