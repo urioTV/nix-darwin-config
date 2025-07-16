@@ -19,6 +19,12 @@
     '';
   };
 
+  home.file = {
+    ".config/zed" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-darwin-config/dotfiles/zed";
+    };
+  };
+
   xdg.enable = true;
 
   home.stateVersion = "23.11";

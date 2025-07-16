@@ -18,7 +18,7 @@
     ubuntu_font_family
     baekmuk-ttf
     nerd-font-patcher
-    corefonts
+    # corefonts
     open-sans
     # inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
     # inputs.apple-fonts.packages.${pkgs.system}.sf-compact-nerd
