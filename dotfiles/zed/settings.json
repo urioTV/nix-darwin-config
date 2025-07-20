@@ -52,8 +52,7 @@
     "commit_message_model": {
       "provider": "openrouter",
       "model": "mistralai/devstral-small"
-    },
-    "version": "2"
+    }
   },
   "features": {
     "edit_prediction_provider": "zed"
@@ -61,8 +60,8 @@
   "icon_theme": "Material Icon Theme",
   "ui_font_family": "Hack Nerd Font",
   "buffer_font_family": "Hack Nerd Font",
-  "ui_font_size": 13,
-  "buffer_font_size": 13,
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
   "theme": {
     "mode": "system",
     "light": "One Light",
