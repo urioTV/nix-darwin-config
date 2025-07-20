@@ -10,5 +10,6 @@
     ./homebrew.nix
     ./fonts.nix
     ./java-jdk.nix
+    ./programs
   ];
 }

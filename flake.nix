@@ -16,6 +16,7 @@
     lix-module = {
       # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
       url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
+      # url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # apple-fonts = {

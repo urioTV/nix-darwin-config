@@ -32,6 +32,7 @@
       "lm-studio"
       "microsoft-edge"
       "zed"
+      "playcover-community"
     ];
     brews = [
       "python@3.11"
