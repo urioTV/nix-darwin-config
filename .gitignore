@@ -10,3 +10,7 @@ result*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Zed
+dotfiles/zed/*
+!dotfiles/zed/settings.json
