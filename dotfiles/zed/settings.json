@@ -58,8 +58,8 @@
     "edit_prediction_provider": "zed"
   },
   "icon_theme": "Material Icon Theme",
-  "ui_font_family": "Hack Nerd Font",
-  "buffer_font_family": "Hack Nerd Font",
+  "buffer_font_family": "SFMono Nerd Font",
+  "ui_font_family": "SFProText Nerd Font",
   "ui_font_size": 12,
   "buffer_font_size": 12,
   "theme": {

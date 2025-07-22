@@ -19,10 +19,10 @@
       # url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # apple-fonts = {
-    #   url = "github:Lyndeno/apple-fonts.nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    apple-fonts = {
+      url = "github:Lyndeno/apple-fonts.nix";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
