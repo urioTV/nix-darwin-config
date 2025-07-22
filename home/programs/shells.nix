@@ -7,29 +7,10 @@
 }:
 {
   programs = {
-    # nushell = {
-    #   enable = true;
-    #   extraConfig = ''
-    #     $env.config.show_banner = false
-    #     $env.PATH = (zsh -c "echo $PATH" | split row ":")
-
-    #   '';
-    # };
     bash = {
-      # enable = true;
-      # bashrcExtra = ''
-      # exec ${pkgs.nushell}/bin/nu
-      # '';
     };
     zsh = {
       enable = true;
-      antidote = {
-        enable = false;
-        plugins = [
-          "zsh-users/zsh-autosuggestions"
-          "zsh-users/zsh-completions"
-        ];
-      };
       prezto = {
         enable = true;
         pmodules = [
@@ -50,7 +31,6 @@
         nix = "noglob nix";
         nixos-rebuild = "noglob nixos-rebuild";
       };
-
     };
     carapace = {
       enable = true;

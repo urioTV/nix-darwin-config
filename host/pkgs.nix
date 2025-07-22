@@ -10,7 +10,6 @@
     nixfmt-rfc-style
     fastfetch
     podman
-    # prismlauncher
     ffmpeg_7-full
     ext4fuse
     cabextract
@@ -23,7 +22,6 @@
     kubectl
     kubernetes-helm
     nodejs
-    # nil
     nixd
   ];
 }
