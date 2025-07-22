@@ -13,12 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lix-module = {
-      # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
-      # url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix-module = {
+    #   # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+    #   url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
+    #   # url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +31,7 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      lix-module,
+      # lix-module,
       ...
     }@inputs:
     {
@@ -41,7 +41,7 @@
           inherit inputs;
         };
         modules = [
-          lix-module.nixosModules.default
+          # lix-module.nixosModules.default
           ./configuration.nix
           {
             # The platform the configuration will be used on.

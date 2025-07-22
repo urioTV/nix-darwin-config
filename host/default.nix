@@ -7,7 +7,6 @@
 {
   imports = [
     ./pkgs.nix
-    ./homebrew.nix
     ./fonts.nix
     ./java-jdk.nix
     ./programs

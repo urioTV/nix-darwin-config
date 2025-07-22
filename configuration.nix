@@ -7,6 +7,7 @@
 {
   imports = [
     ./host
+    ./homebrew.nix
   ];
   system.primaryUser = "urio";
 
