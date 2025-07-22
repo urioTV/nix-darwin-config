@@ -31,7 +31,7 @@
       "rustdesk"
       "lm-studio"
       "microsoft-edge"
-      "zed"
+      "zed@preview"
     ];
     brews = [
       "python@3.11"
