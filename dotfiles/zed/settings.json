@@ -47,11 +47,11 @@
     "model_parameters": [],
     "default_model": {
       "provider": "openrouter",
-      "model": "anthropic/claude-sonnet-4"
+      "model": "mistralai/devstral-medium"
     },
     "commit_message_model": {
       "provider": "openrouter",
-      "model": "mistralai/devstral-small"
+      "model": "mistralai/devstral-medium"
     }
   },
   "features": {

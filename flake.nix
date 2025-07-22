@@ -34,30 +34,27 @@
       # lix-module,
       ...
     }@inputs:
+    let
+      system = "aarch64-darwin";
+      commonNixConfig = {
+        nixpkgs.hostPlatform = system;
+        nixpkgs.config.allowUnfree = true;
+        nix.settings.experimental-features = "nix-command flakes";
+        nix.enable = true;
+      };
+    in
     {
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        system = system;
         specialArgs = {
           inherit inputs;
         };
         modules = [
           # lix-module.nixosModules.default
           ./configuration.nix
+          commonNixConfig
           {
-            # The platform the configuration will be used on.
-            nixpkgs.hostPlatform = "aarch64-darwin";
-
-            # Auto upgrade nix package and the daemon service.
-            # services.nix-daemon.enable = true;
-            nix.enable = true;
-            # nix.package = pkgs.nix;
-
-            # Necessary for using flakes on this system.
-            nix.settings.experimental-features = "nix-command flakes";
-
-            nixpkgs.config.allowUnfree = true;
             system.configurationRevision = self.rev or self.dirtyRev or null;
-
           }
           home-manager.darwinModules.home-manager
           {
