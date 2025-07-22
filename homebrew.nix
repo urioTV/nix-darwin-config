@@ -19,8 +19,6 @@
       "keka"
       "macfuse"
       "handbrake-app"
-      # "whisky"
-      # "hyperkey"
       "obsidian"
       "syncthing-app"
       "localsend"
