@@ -17,7 +17,6 @@
     zenity
     rm-improved
     tldr
-    ollama
     nixfmt-rfc-style
     kubectl
     kubernetes-helm

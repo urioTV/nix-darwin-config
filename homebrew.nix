@@ -30,6 +30,7 @@
       "lm-studio"
       "microsoft-edge"
       "zed@preview"
+      "signal"
     ];
     brews = [
       "python@3.11"
