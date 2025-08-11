@@ -13,55 +13,55 @@
       upgrade = true;
     };
 
-    # Aplikacje graficzne (GUI)
+    # Graphical applications (GUI)
     casks = [
-      # Edytory kodu
+      # Code editors
       "visual-studio-code"
       "zed@preview"
 
-      # Media i multimedia
+      # Media and multimedia
       "vlc"
       "handbrake-app"
       "spotify"
 
-      # Przeglądarki internetowe
+      # Web browsers
       "microsoft-edge"
+      "zen"
 
-      # Komunikacja
+      # Communication
       "signal"
 
-      # Sieć i bezpieczeństwo
+      # Network and security
       "protonvpn"
       "tailscale-app"
       "rustdesk"
 
-      # Narzędzia systemowe
+      # System tools
       "keka"
       "macfuse"
 
-      # Produktywność i organizacja
+      # Productivity and organization
       "obsidian"
 
-      # Synchronizacja i transfer plików
+      # File synchronization and transfer
       "localsend"
       "syncthing-app"
 
-      # Inne
+      # Other
       "qbittorrent"
-      "zen"
       "lm-studio"
     ];
 
-    # Narzędzia wiersza poleceń
+    # Command-line tools
     brews = [
-      # Języki programowania i menedżery pakietów
+      # Programming languages and package managers
       "python@3.11"
       "pipx"
 
-      # Narzędzia graficzne
+      # Graphics tools
       "graphviz"
 
-      # Narzędzia AI/CLI
+      # AI/CLI tools
       "gemini-cli"
     ];
   };
