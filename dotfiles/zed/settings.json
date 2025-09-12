@@ -7,6 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // --- UI & THEME ---
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha"
+  },
+  "icon_theme": "Material Icon Theme",
+  "ui_font_family": "SFProText Nerd Font",
+  "ui_font_size": 12,
+  "buffer_font_family": "SFMono Nerd Font",
+  "buffer_font_size": 12,
+
+  // --- AI AGENTS & CONTEXT SERVERS ---
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3-coder"
+    },
+    "inline_assistant_model": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3-coder"
+    },
+    "commit_message_model": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3-coder"
+    },
+    "model_parameters": []
+  },
   "context_servers": {
     "mcp-server-context7": {
       "source": "extension",
@@ -14,6 +43,8 @@
       "settings": {}
     }
   },
+
+  // --- LANGUAGE & LSP ---
   "languages": {
     "Nix": {
       "language_servers": ["nixd", "!nil"]
@@ -39,38 +70,16 @@
       }
     }
   },
-  "agent": {
-    "default_profile": "write",
-    "inline_assistant_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
-    },
-    "model_parameters": [],
-    "default_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
-    },
-    "commit_message_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
-    }
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "icon_theme": "Material Icon Theme",
-  "buffer_font_family": "SFMono Nerd Font",
-  "ui_font_family": "SFProText Nerd Font",
-  "ui_font_size": 12,
-  "buffer_font_size": 12,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Mocha"
-  },
+
+  // --- TERMINAL ---
   "terminal": {
     "shell": {
       "program": "zsh"
     }
+  },
+
+  // --- OTHER FEATURES ---
+  "features": {
+    "edit_prediction_provider": "zed"
   }
 }
