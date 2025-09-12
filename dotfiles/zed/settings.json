@@ -67,5 +67,10 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Catppuccin Mocha"
+  },
+  "terminal": {
+    "shell": {
+      "program": "zsh"
+    }
   }
 }
