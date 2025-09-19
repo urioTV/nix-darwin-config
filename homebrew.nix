@@ -39,6 +39,8 @@
       # System tools
       "keka"
       "macfuse"
+      "container"
+      "podman-desktop"
 
       # Productivity and organization
       "obsidian"
@@ -63,6 +65,9 @@
 
       # AI/CLI tools
       "gemini-cli"
+
+      # Containerization
+      "podman"
     ];
   };
 }
