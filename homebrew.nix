@@ -68,6 +68,7 @@
 
       # Containerization
       "podman"
+      "podman-compose"
     ];
   };
 }

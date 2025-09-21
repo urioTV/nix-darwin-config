@@ -31,6 +31,7 @@
 
   home.sessionVariables = {
     EDITOR = "micro";
+    DBX_CONTAINER_HOME_PREFIX = "$HOME/distrobox";
   };
 
   home.sessionPath = [
