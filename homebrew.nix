@@ -44,6 +44,7 @@
 
       # Productivity and organization
       "obsidian"
+      "logseq"
 
       # File synchronization and transfer
       "localsend"
