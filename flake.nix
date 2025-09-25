@@ -13,22 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # lix = {
-    #   url = "git+https://git.lix.systems/lix-project/lix?ref=release-2.93";
-    #   flake = false;
-    # };
-
-    # lix-module = {
-    #   url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
-    #   # url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
-    #   # url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
-    #   inputs = {
-    #     # flake-utils.follows = "flake-utils";
-    #     nixpkgs.follows = "nixpkgs";
-    #     lix.follows = "lix";
-    #   };
-    # };
-
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -41,17 +25,31 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      # lix-module,
       ...
     }@inputs:
     let
       system = "aarch64-darwin";
-      commonNixConfig = {
-        nixpkgs.hostPlatform = system;
-        nixpkgs.config.allowUnfree = true;
-        nix.settings.experimental-features = "nix-command flakes";
-        nix.enable = true;
-      };
+      commonNixConfig =
+        { pkgs, ... }:
+        {
+          nixpkgs.hostPlatform = system;
+          nixpkgs.config.allowUnfree = true;
+          nix.settings.experimental-features = "nix-command flakes";
+          nix.enable = true;
+
+          nixpkgs.overlays = [
+            (final: prev: {
+              inherit (prev.lixPackageSets.stable)
+                nixpkgs-review
+                nix-eval-jobs
+                nix-fast-build
+                colmena
+                ;
+            })
+          ];
+
+          nix.package = pkgs.lixPackageSets.stable.lix;
+        };
     in
     {
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
