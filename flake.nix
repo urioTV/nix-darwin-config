@@ -29,9 +29,10 @@
     }@inputs:
     let
       system = "aarch64-darwin";
+      hostname = "MacBook-Air-Urio";
     in
     {
-      darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
         system = system;
         specialArgs = {
           inherit inputs system;
@@ -69,6 +70,6 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."MacBook-Air-Urio".pkgs;
+      darwinPackages = self.darwinConfigurations."${hostname}".pkgs;
     };
 }
