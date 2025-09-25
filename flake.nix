@@ -58,7 +58,6 @@
           inherit inputs;
         };
         modules = [
-          # lix-module.nixosModules.default
           ./configuration.nix
           commonNixConfig
           {
