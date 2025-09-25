@@ -27,11 +27,14 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "aarch64-darwin";
+    in
     {
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        system = system;
         specialArgs = {
-          inherit inputs;
+          inherit inputs system;
         };
         modules = [
           ./configuration.nix

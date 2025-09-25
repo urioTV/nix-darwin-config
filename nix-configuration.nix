@@ -1,7 +1,6 @@
-# System architecture: aarch64-darwin (Apple Silicon)
-{ pkgs, ... }:
+{ pkgs, system, ... }:
 {
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = system;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = "nix-command flakes";
   nix.enable = true;
