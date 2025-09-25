@@ -1,3 +1,4 @@
+# System architecture: aarch64-darwin (Apple Silicon)
 { pkgs, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
