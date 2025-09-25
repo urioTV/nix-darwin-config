@@ -29,27 +29,6 @@
     }@inputs:
     let
       system = "aarch64-darwin";
-      commonNixConfig =
-        { pkgs, ... }:
-        {
-          nixpkgs.hostPlatform = system;
-          nixpkgs.config.allowUnfree = true;
-          nix.settings.experimental-features = "nix-command flakes";
-          nix.enable = true;
-
-          nixpkgs.overlays = [
-            (final: prev: {
-              inherit (prev.lixPackageSets.stable)
-                nixpkgs-review
-                nix-eval-jobs
-                nix-fast-build
-                colmena
-                ;
-            })
-          ];
-
-          nix.package = pkgs.lixPackageSets.stable.lix;
-        };
     in
     {
       darwinConfigurations."MacBook-Air-Urio" = nix-darwin.lib.darwinSystem {
@@ -59,7 +38,7 @@
         };
         modules = [
           ./configuration.nix
-          commonNixConfig
+          ./nix-configuration.nix
           {
             system.configurationRevision = self.rev or self.dirtyRev or null;
           }
