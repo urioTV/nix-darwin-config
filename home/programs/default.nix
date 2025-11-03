@@ -28,5 +28,9 @@
       # clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/Users/urio/nix-darwin-config";
     };
+    pyenv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

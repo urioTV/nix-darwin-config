@@ -58,7 +58,6 @@
     # Command-line tools
     brews = [
       # Programming languages and package managers
-      "python@3.11"
       "pipx"
 
       # Graphics tools
