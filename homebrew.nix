@@ -23,6 +23,7 @@
       "vlc"
       "handbrake-app"
       "spotify"
+      "stremio"
 
       # Web browsers
       "microsoft-edge"

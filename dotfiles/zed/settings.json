@@ -24,15 +24,15 @@
     "default_profile": "write",
     "default_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "model": "minimax/minimax-m2"
     },
     "inline_assistant_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "model": "minimax/minimax-m2"
     },
     "commit_message_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "model": "minimax/minimax-m2"
     },
     "model_parameters": []
   },
