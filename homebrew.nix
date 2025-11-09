@@ -31,6 +31,7 @@
 
       # Communication
       "signal"
+      "slack"
 
       # Network and security
       "protonvpn"
