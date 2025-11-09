@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  system,
   ...
 }:
 {
@@ -19,9 +20,9 @@
     nerd-font-patcher
     # corefonts
     open-sans
-    inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
-    inputs.apple-fonts.packages.${pkgs.system}.sf-compact-nerd
-    inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
-    inputs.apple-fonts.packages.${pkgs.system}.ny-nerd
+    inputs.apple-fonts.packages.${system}.sf-pro-nerd
+    inputs.apple-fonts.packages.${system}.sf-compact-nerd
+    inputs.apple-fonts.packages.${system}.sf-mono-nerd
+    inputs.apple-fonts.packages.${system}.ny-nerd
   ];
 }
