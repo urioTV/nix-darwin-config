@@ -55,6 +55,7 @@
       # Other
       "qbittorrent"
       "lm-studio"
+      "anythingllm"
     ];
 
     # Command-line tools
