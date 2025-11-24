@@ -24,6 +24,7 @@
     nixd
     terraform
     terraform-ls
+    ansible
 
   ];
 }
