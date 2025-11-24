@@ -22,5 +22,8 @@
     kubernetes-helm
     nodejs
     nixd
+    terraform
+    terraform-ls
+
   ];
 }
