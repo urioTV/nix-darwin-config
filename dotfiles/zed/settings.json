@@ -24,15 +24,15 @@
     "default_profile": "write",
     "default_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "model": "mistralai/devstral-2512"
     },
     "inline_assistant_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder:exacto"
+      "model": "mistralai/devstral-2512"
     },
     "commit_message_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder:exacto"
+      "model": "mistralai/devstral-2512"
     },
     "model_parameters": []
   },
