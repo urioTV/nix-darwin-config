@@ -56,6 +56,9 @@
       "qbittorrent"
       "lm-studio"
       "anythingllm"
+      # "calibre"
+      # "kindle-comic-converter"
+      "playcover-community"
     ];
 
     # Command-line tools

@@ -24,7 +24,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "openrouter",
-      "model": "qwen/qwen3-coder:exacto"
+      "model": "qwen/qwen3-coder"
     },
     "inline_assistant_model": {
       "provider": "openrouter",
