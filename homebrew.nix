@@ -56,9 +56,8 @@
       "qbittorrent"
       "lm-studio"
       "anythingllm"
-      # "calibre"
-      # "kindle-comic-converter"
       "playcover-community"
+      "Sikarugir-App/sikarugir/sikarugir"
     ];
 
     # Command-line tools
