@@ -15,15 +15,13 @@
 
     # Graphical applications (GUI)
     casks = [
-      # Code editors
+      # Development
       "visual-studio-code"
       "zed@preview"
 
-      # Media and multimedia
-      "vlc"
-      "handbrake-app"
-      "spotify"
-      "stremio"
+      # Artificial Intelligence
+      "lm-studio"
+      "anythingllm"
 
       # Web browsers
       "microsoft-edge"
@@ -33,30 +31,36 @@
       "signal"
       "slack"
 
-      # Network and security
+      # Productivity
+      "obsidian"
+      "logseq"
+
+      # Media
+      "spotify"
+      "stremio"
+      "vlc"
+      "handbrake-app"
+
+      # Network
       "protonvpn"
       "tailscale-app"
       "rustdesk"
 
-      # System tools
-      "keka"
-      "macfuse"
-      "container"
-      "podman-desktop"
-
-      # Productivity and organization
-      "obsidian"
-      "logseq"
-
-      # File synchronization and transfer
+      # File Management
       "localsend"
       "syncthing-app"
-
-      # Other
       "qbittorrent"
-      "lm-studio"
-      "anythingllm"
+      "keka"
+
+      # Virtualization & Containers
+      "podman-desktop"
+      "container"
+
+      # Gaming & Emulation
       "playcover-community"
+
+      # System Utilities
+      "macfuse"
       "Sikarugir-App/sikarugir/sikarugir"
     ];
 
