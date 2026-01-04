@@ -25,6 +25,7 @@
     terraform
     terraform-ls
     ansible
-
+    rustc
+    cargo
   ];
 }
