@@ -19,8 +19,9 @@
     # Graphical applications (GUI)
     casks = [
       # Development
-      "visual-studio-code"
+      # "visual-studio-code"
       "zed@preview"
+      "antigravity"
 
       # Artificial Intelligence
       "lm-studio"

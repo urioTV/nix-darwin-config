@@ -23,6 +23,9 @@
     ".config/zed" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-darwin-config/dotfiles/zed";
     };
+    "Library/Application Support/Antigravity/User/settings.json" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-darwin-config/dotfiles/antigravity/settings.json";
+    };
   };
 
   xdg.enable = true;
