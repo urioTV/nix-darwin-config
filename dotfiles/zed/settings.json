@@ -24,15 +24,15 @@
     "default_profile": "write",
     "default_model": {
       "provider": "openrouter",
-      "model": "minimax/minimax-m2.1"
+      "model": "xiaomi/mimo-v2-flash:free"
     },
     "inline_assistant_model": {
       "provider": "openrouter",
-      "model": "minimax/minimax-m2.1"
+      "model": "xiaomi/mimo-v2-flash:free"
     },
     "commit_message_model": {
       "provider": "openrouter",
-      "model": "minimax/minimax-m2.1"
+      "model": "xiaomi/mimo-v2-flash:free"
     },
     "model_parameters": []
   },
