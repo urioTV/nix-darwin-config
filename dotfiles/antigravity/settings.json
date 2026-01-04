@@ -22,5 +22,9 @@
         }
     },
     "git.autofetch": true,
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "editor.fontFamily": "SFMono Nerd Font",
+    "editor.fontSize": 12
 }
