@@ -11,6 +11,7 @@
     };
     zsh = {
       enable = true;
+      dotDir = config.home.homeDirectory;
       prezto = {
         enable = true;
         pmodules = [

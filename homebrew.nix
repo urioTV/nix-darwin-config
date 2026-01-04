@@ -12,6 +12,9 @@
       cleanup = "uninstall";
       upgrade = true;
     };
+    taps = [
+      "Sikarugir-App/sikarugir"
+    ];
 
     # Graphical applications (GUI)
     casks = [
@@ -61,7 +64,7 @@
 
       # System Utilities
       "macfuse"
-      "Sikarugir-App/sikarugir/sikarugir"
+      "sikarugir"
     ];
 
     # Command-line tools
@@ -79,5 +82,8 @@
       "podman"
       "podman-compose"
     ];
+  };
+  environment.variables = {
+    HOMEBREW_INSTALL_FROM_API = "1";
   };
 }
