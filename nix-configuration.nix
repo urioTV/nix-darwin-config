@@ -22,6 +22,10 @@
   nixpkgs.hostPlatform = system;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.trusted-users = [
+    "root"
+    "urio"
+  ];
   nix.enable = true;
 
   nixpkgs.overlays = [

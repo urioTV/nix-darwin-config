@@ -13,6 +13,10 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  security.sudo.extraConfig = ''
+    Defaults always_set_home
+  '';
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
