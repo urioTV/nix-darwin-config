@@ -30,6 +30,7 @@
       # Web browsers
       "microsoft-edge"
       "zen"
+      "brave-browser"
 
       # Communication
       "signal"
