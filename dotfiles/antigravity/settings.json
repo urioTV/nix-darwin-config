@@ -26,7 +26,5 @@
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "catppuccin-mocha",
     "editor.fontFamily": "SFMono Nerd Font",
-	"editor.fontSize": 12,
-	"antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
-	"antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery"
+    "editor.fontSize": 12
 }
