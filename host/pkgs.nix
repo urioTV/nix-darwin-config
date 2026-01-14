@@ -22,10 +22,16 @@
     kubernetes-helm
     nodejs
     nixd
-    terraform
-    terraform-ls
+    opentofu
+    opentofu-ls
+    # Symlink terraform -> tofu dla kompatybilności
+    (pkgs.runCommand "terraform-tofu-symlink" { } ''
+      mkdir -p $out/bin
+      ln -s ${pkgs.opentofu}/bin/tofu $out/bin/terraform
+    '')
     ansible
     rustc
     cargo
+    ansible-lint
   ];
 }

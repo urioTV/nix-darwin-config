@@ -31,6 +31,7 @@
       shellAliases = {
         nix = "noglob nix";
         nixos-rebuild = "noglob nixos-rebuild";
+        # terraform = "tofu";
       };
     };
     carapace = {

@@ -26,5 +26,7 @@
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontFamily": "SFMono Nerd Font",
-    "editor.fontSize": 12
+    "editor.fontSize": 12,
+    "python.languageServer": "Default",
+    "redhat.telemetry.enabled": false
 }
