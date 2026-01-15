@@ -28,7 +28,7 @@
       # "anythingllm"
 
       # Web browsers
-      "microsoft-edge"
+      # "microsoft-edge"
       "zen"
       "brave-browser"
 
