@@ -25,7 +25,7 @@
 
       # Artificial Intelligence
       "lm-studio"
-      "anythingllm"
+      # "anythingllm"
 
       # Web browsers
       "microsoft-edge"
@@ -33,8 +33,8 @@
       "brave-browser"
 
       # Communication
-      "signal"
-      "slack"
+      # "signal"
+      # "slack"
 
       # Productivity
       "obsidian"
@@ -56,10 +56,11 @@
       "syncthing-app"
       "qbittorrent"
       "keka"
+      "jdownloader"
 
       # Virtualization & Containers
-      "podman-desktop"
-      "container"
+      # "podman-desktop"
+      # "container"
 
       # Gaming & Emulation
       "playcover-community"
