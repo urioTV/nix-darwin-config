@@ -38,13 +38,13 @@
 
       # Productivity
       "obsidian"
-      "logseq"
+      # "logseq"
 
       # Media
-      "spotify"
+      # "spotify"
       "stremio"
       "vlc"
-      "handbrake-app"
+      # "handbrake-app"
 
       # Network
       "protonvpn"
