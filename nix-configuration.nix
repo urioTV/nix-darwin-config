@@ -21,23 +21,30 @@
 
   nixpkgs.hostPlatform = system;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = "nix-command flakes";
-  nix.settings.trusted-users = [
-    "root"
-    "urio"
-  ];
+  nix.settings = {
+    auto-optimise-store = true;
+
+    # Determinate Nix Specific
+    eval-cores = 0;
+
+    experimental-features = "nix-command flakes";
+    trusted-users = [
+      "root"
+      "urio"
+    ];
+  };
   nix.enable = false;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      inherit (prev.lixPackageSets.stable)
-        nixpkgs-review
-        nix-eval-jobs
-        nix-fast-build
-        colmena
-        ;
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     inherit (prev.lixPackageSets.stable)
+  #       nixpkgs-review
+  #       nix-eval-jobs
+  #       nix-fast-build
+  #       colmena
+  #       ;
+  #   })
+  # ];
 
   # nix.package = pkgs.lixPackageSets.stable.lix;
 }
