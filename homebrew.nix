@@ -42,7 +42,7 @@
 
       # Media
       # "spotify"
-      "stremio"
+      # "stremio"
       "vlc"
       # "handbrake-app"
 
@@ -68,6 +68,7 @@
       # System Utilities
       "macfuse"
       "sikarugir"
+      "docker-desktop"
     ];
 
     # Command-line tools
@@ -84,6 +85,7 @@
       # Containerization
       "podman"
       "podman-compose"
+      "talosctl"
     ];
   };
   environment.variables = {

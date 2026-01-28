@@ -9,7 +9,6 @@
     micro
     nixfmt-rfc-style
     fastfetch
-    podman
     ffmpeg_7-full
     ext4fuse
     cabextract

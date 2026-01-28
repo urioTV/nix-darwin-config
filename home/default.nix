@@ -1,7 +1,13 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     # ./pkgs
     ./programs
-    # ./services
+    ./services
   ];
 }
