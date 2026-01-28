@@ -1,23 +1,23 @@
 { pkgs, system, ... }:
 {
-  nix.optimise = {
-    automatic = true;
-    interval = {
-      Weekday = 0;
-      Hour = 0;
-      Minute = 0;
-    };
-  };
+  # nix.optimise = {
+  #   automatic = true;
+  #   interval = {
+  #     Weekday = 0;
+  #     Hour = 0;
+  #     Minute = 0;
+  #   };
+  # };
 
-  nix.gc = {
-    automatic = true;
-    interval = {
-      Weekday = 0;
-      Hour = 0;
-      Minute = 0;
-    };
-    options = "--delete-older-than 3d";
-  };
+  # nix.gc = {
+  #   automatic = true;
+  #   interval = {
+  #     Weekday = 0;
+  #     Hour = 0;
+  #     Minute = 0;
+  #   };
+  #   options = "--delete-older-than 3d";
+  # };
 
   nixpkgs.hostPlatform = system;
   nixpkgs.config.allowUnfree = true;
@@ -26,7 +26,7 @@
     "root"
     "urio"
   ];
-  nix.enable = true;
+  nix.enable = false;
 
   nixpkgs.overlays = [
     (final: prev: {
@@ -39,5 +39,5 @@
     })
   ];
 
-  nix.package = pkgs.lixPackageSets.stable.lix;
+  # nix.package = pkgs.lixPackageSets.stable.lix;
 }
