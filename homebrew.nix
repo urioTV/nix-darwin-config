@@ -44,7 +44,7 @@
       # "spotify"
       # "stremio"
       "vlc"
-      # "handbrake-app"
+      "handbrake-app"
 
       # Network
       "protonvpn"

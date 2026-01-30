@@ -10,5 +10,6 @@
     ./fonts.nix
     ./java-jdk.nix
     ./programs
+    ./sops.nix
   ];
 }

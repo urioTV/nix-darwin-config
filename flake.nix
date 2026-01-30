@@ -17,6 +17,11 @@
       url = "github:Lyndeno/apple-fonts.nix";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -40,6 +45,7 @@
         modules = [
           ./configuration.nix
           ./nix-configuration.nix
+          inputs.sops-nix.darwinModules.sops
           {
             system.configurationRevision = self.rev or self.dirtyRev or null;
           }

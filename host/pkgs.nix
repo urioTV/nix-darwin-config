@@ -32,5 +32,10 @@
     rustc
     cargo
     ansible-lint
+
+    # SOPS secrets management tools
+    sops
+    age
+    ssh-to-age
   ];
 }
