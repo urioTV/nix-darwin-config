@@ -20,6 +20,8 @@
     kubectl
     kubernetes-helm
     nodejs
+    nodePackages.typescript-language-server
+    nodePackages.typescript
     nixd
     opentofu
     opentofu-ls

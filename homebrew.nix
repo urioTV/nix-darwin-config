@@ -20,7 +20,7 @@
     casks = [
       # Development
       # "visual-studio-code"
-      "zed@preview"
+      # "zed@preview"
       "antigravity"
 
       # Artificial Intelligence
@@ -56,11 +56,13 @@
       "syncthing-app"
       "qbittorrent"
       "keka"
-      "jdownloader"
+      # "jdownloader"
+      "google-drive"
 
       # Virtualization & Containers
       # "podman-desktop"
       # "container"
+      "utm"
 
       # Gaming & Emulation
       "playcover-community"
