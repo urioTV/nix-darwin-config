@@ -33,6 +33,9 @@
 
   home.stateVersion = "23.11";
 
+  home.username = "urio";
+  home.homeDirectory = "/Users/urio";
+
   home.sessionVariables = {
     EDITOR = "micro";
     DBX_CONTAINER_HOME_PREFIX = "$HOME/distrobox";
