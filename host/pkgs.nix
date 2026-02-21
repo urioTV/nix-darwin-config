@@ -34,6 +34,7 @@
     rustc
     cargo
     ansible-lint
+    pulumi-bin
 
     # SOPS secrets management tools
     sops

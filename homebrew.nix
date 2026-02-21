@@ -25,7 +25,7 @@
 
       # Artificial Intelligence
       "lm-studio"
-      # "anythingllm"
+      "openclaw"
 
       # Web browsers
       # "microsoft-edge"
@@ -71,6 +71,7 @@
       "macfuse"
       "sikarugir"
       "docker-desktop"
+      "gcloud-cli"
     ];
 
     # Command-line tools

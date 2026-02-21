@@ -36,6 +36,9 @@
       enable = true;
       enableZshIntegration = true;
     };
+    uv = {
+      enable = true;
+    };
     direnv = {
       enable = true;
       enableZshIntegration = true;
