@@ -35,16 +35,50 @@
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    inputs@{
+      flake-parts,
+      import-tree,
+      self,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } (
       { ... }:
       {
         imports = [
-          ./darwin.nix
           ./sops-config.nix
         ];
 
         systems = [ "aarch64-darwin" ];
+
+        flake.darwinConfigurations.MacBook-Air-Urio = inputs.nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            inherit inputs import-tree self;
+            system = "aarch64-darwin";
+          };
+          modules = [
+            ./configuration.nix
+            ./nix-configuration.nix
+            inputs.sops-nix.darwinModules.sops
+            self.darwinModules.sops-config
+            inputs.home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backupnix";
+                extraSpecialArgs = {
+                  inherit inputs import-tree;
+                };
+                sharedModules = [
+                  inputs.sops-nix.homeManagerModules.sops
+                  self.homeModules.sops-config
+                ];
+                users.urio = import ./home.nix;
+              };
+            }
+          ];
+        };
       }
     );
 }
