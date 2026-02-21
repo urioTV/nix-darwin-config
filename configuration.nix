@@ -2,14 +2,20 @@
   pkgs,
   self,
   lib,
+  import-tree,
   ...
 }:
 {
   imports = [
-    ./host
+    (import-tree ./host)
     ./homebrew.nix
   ];
   system.primaryUser = "urio";
+
+  users.users.urio = {
+    name = "urio";
+    home = "/Users/urio";
+  };
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
