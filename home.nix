@@ -2,12 +2,13 @@
   config,
   pkgs,
   inputs,
+  import-tree,
   lib,
   ...
 }:
 
 {
-  imports = [ ./home ];
+  imports = (import-tree ./home).imports;
 
   # nix.package = pkgs.nix;
   # nixpkgs.config.allowUnfree = true;

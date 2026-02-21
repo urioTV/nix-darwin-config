@@ -8,6 +8,8 @@
 {
   imports = [
     ./shells.nix
+    ./ai.nix
+    ./opencode.nix
   ];
   programs = {
     git = {

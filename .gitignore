@@ -14,3 +14,6 @@ Thumbs.db
 # Zed
 dotfiles/zed/*
 !dotfiles/zed/settings.json
+
+# AI agents
+AGENTS.md
