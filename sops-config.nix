@@ -5,7 +5,7 @@ let
     {
       sops = {
         age.sshKeyPaths = [ "/Users/urio/.ssh/id_ed25519" ];
-        defaultSopsFile = ./host/secrets/secrets.yaml;
+        defaultSopsFile = ./sops/secrets/secrets.yaml;
         secrets = {
           openrouter_api_key = { };
           github_token = { };
