@@ -35,6 +35,8 @@
     cargo
     ansible-lint
     pulumi-bin
+    bun
+    nodejs
 
     # SOPS secrets management tools
     sops

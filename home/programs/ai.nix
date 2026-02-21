@@ -2,6 +2,7 @@
 
 {
   programs.mcp = {
+    enable = true;
     servers = {
       ddg-search = {
         command = "bunx";
