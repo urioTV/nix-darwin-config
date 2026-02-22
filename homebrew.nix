@@ -25,7 +25,6 @@
 
       # Artificial Intelligence
       "lm-studio"
-      "openclaw"
 
       # Web browsers
       # "microsoft-edge"
@@ -88,7 +87,6 @@
       # Containerization
       "podman"
       "podman-compose"
-      "talosctl"
     ];
   };
   environment.variables = {
