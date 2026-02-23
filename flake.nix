@@ -54,6 +54,7 @@
           ./libs/darwin-flake-module.nix
           ./sops-config.nix
           ./stylix-config.nix
+          ./nix-config.nix
         ];
 
         systems = [ "aarch64-darwin" ];
@@ -66,7 +67,7 @@
           };
           modules = [
             ./configuration.nix
-            ./nix-configuration.nix
+            self.darwinModules.nix-config
             self.darwinModules.sops-config
             inputs.home-manager.darwinModules.home-manager
             self.darwinModules.stylix-config
@@ -81,6 +82,7 @@
                 sharedModules = [
                   self.homeModules.sops-config
                   self.homeModules.stylix-config
+                  self.homeModules.nix-config
                 ];
                 users.urio = import ./home.nix;
               };
