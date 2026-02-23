@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 let
   sharedSopsConfig =
     { ... }:
@@ -16,6 +16,16 @@ let
     };
 in
 {
-  flake.darwinModules.sops-config = sharedSopsConfig;
-  flake.homeModules.sops-config = sharedSopsConfig;
+  flake.darwinModules.sops-config = {
+    imports = [
+      inputs.sops-nix.darwinModules.sops
+      sharedSopsConfig
+    ];
+  };
+  flake.homeModules.sops-config = {
+    imports = [
+      inputs.sops-nix.homeManagerModules.sops
+      sharedSopsConfig
+    ];
+  };
 }
