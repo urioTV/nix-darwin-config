@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     # Formatter Nixa (styl RFC)
-    nixfmt-rfc-style
+    nixfmt
 
     # Serwer języka Nix (LSP)
     nixd

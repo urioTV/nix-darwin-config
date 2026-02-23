@@ -7,7 +7,7 @@
 
     # Infrastructure as Code (OpenTofu / Terraform-compatible)
     opentofu
-    opentofu-ls
+    tofu-ls
     # Symlink terraform -> tofu dla kompatybilności
     (pkgs.runCommand "terraform-tofu-symlink" { } ''
       mkdir -p $out/bin

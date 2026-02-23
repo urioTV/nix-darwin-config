@@ -1,17 +1,9 @@
 { ... }:
-let
-  sharedNixConfig =
-    { ... }:
-    {
-      nixpkgs.config.allowUnfree = true;
-    };
-in
 {
   flake.darwinModules.nix-config = {
-    imports = [ sharedNixConfig ];
-
     # darwin-specific nix configuration
     nixpkgs.hostPlatform = "aarch64-darwin";
+    nixpkgs.config.allowUnfree = true;
     nix.enable = false;
     nix.settings = {
       auto-optimise-store = true;
@@ -28,8 +20,6 @@ in
   };
 
   flake.homeModules.nix-config = {
-    imports = [ sharedNixConfig ];
-
     # home-manager-specific nix configuration
   };
 }
