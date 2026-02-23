@@ -32,6 +32,11 @@
     import-tree = {
       url = "github:vic/import-tree";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -45,7 +50,10 @@
       { ... }:
       {
         imports = [
+          inputs.home-manager.flakeModules.home-manager
+          ./libs/darwin-flake-module.nix
           ./sops-config.nix
+          ./stylix-config.nix
         ];
 
         systems = [ "aarch64-darwin" ];
@@ -59,9 +67,9 @@
           modules = [
             ./configuration.nix
             ./nix-configuration.nix
-            inputs.sops-nix.darwinModules.sops
             self.darwinModules.sops-config
             inputs.home-manager.darwinModules.home-manager
+            self.darwinModules.stylix-config
             {
               home-manager = {
                 useGlobalPkgs = true;
@@ -71,8 +79,8 @@
                   inherit inputs import-tree;
                 };
                 sharedModules = [
-                  inputs.sops-nix.homeManagerModules.sops
                   self.homeModules.sops-config
+                  self.homeModules.stylix-config
                 ];
                 users.urio = import ./home.nix;
               };

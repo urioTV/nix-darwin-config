@@ -16,7 +16,6 @@ let
   freeModel = "github-copilot/gpt-5-mini";
   freeFallbacks = [
     "google/gemini-3.0-flash"
-    "openrouter/meta-llama/llama-3.1-8b-instruct"
     "github-copilot/gpt-4.1"
   ];
 in
