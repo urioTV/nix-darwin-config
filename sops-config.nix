@@ -9,8 +9,9 @@ let
         secrets = {
           openrouter_api_key = { };
           github_token = { };
-          "nano-gpt_api_key" = { };
+          nano-gpt_api_key = { };
           context7_api_key = { };
+          z-ai_api_key = { };
         };
       };
     };
