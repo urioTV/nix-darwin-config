@@ -12,5 +12,8 @@
 
     # Bun (runtime JS/TS)
     bun
+
+    # Git
+    gh
   ];
 }

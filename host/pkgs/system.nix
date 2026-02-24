@@ -23,5 +23,8 @@
     # Narzędzia CLI
     rm-improved
     tldr
+
+    # Inne
+    rclone
   ];
 }
