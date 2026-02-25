@@ -70,7 +70,6 @@
       "macfuse"
       "sikarugir"
       "docker-desktop"
-      "gcloud-cli"
     ];
 
     # Command-line tools
@@ -80,13 +79,6 @@
 
       # Graphics tools
       "graphviz"
-
-      # AI/CLI tools
-      "gemini-cli"
-
-      # Containerization
-      "podman"
-      "podman-compose"
     ];
   };
   environment.variables = {
