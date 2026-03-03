@@ -17,3 +17,6 @@ dotfiles/zed/*
 
 # AI agents
 AGENTS.md
+
+# SOPS
+sops/secrets/.decrypted~secrets.yaml
