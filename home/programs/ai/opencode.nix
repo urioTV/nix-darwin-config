@@ -1,6 +1,4 @@
 { config, pkgs, ... }:
-let
-in
 {
   xdg.configFile."opencode/oh-my-opencode.json".text = builtins.toJSON {
     google_auth = false;
@@ -28,49 +26,46 @@ in
       sisyphus = {
         model = "zai-coding-plan/glm-5";
         fallback_models = [
-          "nano-gpt/qwen3.5-122b-a10b:thinking"
           "github-copilot/claude-sonnet-4.6"
-          "openrouter/zhipuai/glm-5"
+          "nano-gpt/qwen/qwen3.5-397b-a17b"
         ];
       };
       metis = {
-        model = "zai-coding-plan/glm-4.7";
+        model = "google/gemini-3.1-pro-preview";
         fallback_models = [
-          "nano-gpt/qwen3.5-122b-a10b:thinking"
           "github-copilot/claude-sonnet-4.6"
-          "openrouter/zhipuai/glm-5"
+          "zai-coding-plan/glm-4.7"
+          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
         ];
       };
 
       # --- Dual-Prompt Agents ---
       prometheus = {
-        model = "zai-coding-plan/glm-4.7";
+        model = "zai-coding-plan/glm-5";
         fallback_models = [
-          "nano-gpt/qwen3.5-122b-a10b:thinking"
           "github-copilot/claude-sonnet-4.6"
-          "openrouter/zhipuai/glm-5"
+          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
         ];
       };
       atlas = {
-        model = "zai-coding-plan/glm-4.7";
+        model = "zai-coding-plan/glm-5";
         fallback_models = [
-          "nano-gpt/qwen3.5-122b-a10b:thinking"
           "github-copilot/claude-sonnet-4.6"
-          "openrouter/zhipuai/glm-5"
+          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
         ];
       };
 
       # --- GPT-Native Agents (GPT family only) ---
       hephaestus = {
-        model = "openrouter/openai/gpt-5.1-codex-mini";
+        model = "github-copilot/gpt-5.2-codex";
         fallback_models = [ "github-copilot/gpt-5-mini" ];
       };
       oracle = {
-        model = "openrouter/openai/gpt-5.1-codex-mini";
+        model = "github-copilot/gpt-5.1-codex-mini";
         fallback_models = [ "github-copilot/gpt-5-mini" ];
       };
       momus = {
-        model = "openrouter/openai/gpt-5.1-codex-mini";
+        model = "github-copilot/gpt-5.1-codex-mini";
         fallback_models = [ "github-copilot/gpt-5-mini" ];
       };
 
@@ -85,7 +80,7 @@ in
         model = "nano-gpt/qwen3.5-122b-a10b";
       };
       "multimodal-looker" = {
-        model = "nano-gpt/qwen3.5-122b-a10b";
+        model = "google/gemini-3-flash-preview";
       };
     };
   };
@@ -103,10 +98,18 @@ in
         };
         nano-gpt = {
           models = {
-            "qwen3.5-35b-a3b" = { };
-            "qwen3.5-35b-a3b:thinking" = { };
-            "qwen3.5-122b-a10b" = { };
-            "qwen3.5-122b-a10b:thinking" = { };
+            "qwen3.5-35b-a3b" = {
+              name = "Qwen3.5 35B";
+            };
+            "qwen3.5-35b-a3b:thinking" = {
+              name = "Qwen3.5 35B Thinking";
+            };
+            "qwen3.5-122b-a10b" = {
+              name = "Qwen3.5 122B";
+            };
+            "qwen3.5-122b-a10b:thinking" = {
+              name = "Qwen3.5 122B Thinking";
+            };
           };
           options = {
             apiKey = "{file:${config.sops.secrets.nano-gpt_api_key.path}}";
@@ -121,4 +124,5 @@ in
       ];
     };
   };
+
 }
