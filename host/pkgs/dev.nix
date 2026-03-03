@@ -5,6 +5,7 @@
     nodejs
     nodePackages.typescript-language-server
     nodePackages.typescript
+    vtsls
 
     # Rust
     rustc

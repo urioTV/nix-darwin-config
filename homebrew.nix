@@ -79,6 +79,9 @@
 
       # Graphics tools
       "graphviz"
+
+      # Kubernetes
+      "minikube"
     ];
   };
   environment.variables = {

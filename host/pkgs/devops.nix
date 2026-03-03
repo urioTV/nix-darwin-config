@@ -20,5 +20,8 @@
 
     # Pulumi (IaC multi-cloud)
     pulumi-bin
+
+    # GitHub Actions runner
+    act
   ];
 }
