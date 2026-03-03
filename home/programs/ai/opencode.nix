@@ -24,34 +24,34 @@
     agents = {
       # --- Z.ai Coding Plan Agents ---
       sisyphus = {
-        model = "zai-coding-plan/glm-5";
+        model = "litellm/glm-5";
         fallback_models = [
           "github-copilot/claude-sonnet-4.6"
-          "nano-gpt/qwen/qwen3.5-397b-a17b"
+          "litellm/qwen3.5-397b"
         ];
       };
       metis = {
         model = "google/gemini-3.1-pro-preview";
         fallback_models = [
           "github-copilot/claude-sonnet-4.6"
-          "zai-coding-plan/glm-4.7"
-          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
+          "litellm/glm-4.7"
+          "litellm/qwen3.5-397b-thinking"
         ];
       };
 
       # --- Dual-Prompt Agents ---
       prometheus = {
-        model = "zai-coding-plan/glm-5";
+        model = "litellm/glm-5";
         fallback_models = [
           "github-copilot/claude-sonnet-4.6"
-          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
+          "litellm/qwen3.5-397b-thinking"
         ];
       };
       atlas = {
-        model = "zai-coding-plan/glm-5";
+        model = "litellm/glm-5";
         fallback_models = [
           "github-copilot/claude-sonnet-4.6"
-          "nano-gpt/qwen/qwen3.5-397b-a17b-thinking"
+          "litellm/qwen3.5-397b-thinking"
         ];
       };
 
@@ -71,13 +71,13 @@
 
       # --- Utility / Subagents (Speed and cost focused) ---
       "sisyphus-junior" = {
-        model = "nano-gpt/qwen3.5-122b-a10b";
+        model = "litellm/qwen3.5-122b";
       };
       explore = {
-        model = "nano-gpt/qwen3.5-122b-a10b";
+        model = "litellm/qwen3.5-122b";
       };
       librarian = {
-        model = "nano-gpt/qwen3.5-122b-a10b";
+        model = "litellm/qwen3.5-122b";
       };
       "multimodal-looker" = {
         model = "google/gemini-3-flash-preview";
@@ -90,29 +90,47 @@
     enableMcpIntegration = true;
     settings = {
       provider = {
-        openrouter = {
-          options = {
-            # baseURL = "https://openrouter.ai/api/v1";
-            apiKey = "{file:${config.sops.secrets.openrouter_api_key.path}}";
-          };
-        };
-        nano-gpt = {
+        litellm = {
+          npm = "@ai-sdk/openai-compatible";
+          name = "LiteLLM";
           models = {
-            "qwen3.5-35b-a3b" = {
-              name = "Qwen3.5 35B";
+            "glm-5" = {
+              name = "GLM-5";
             };
-            "qwen3.5-35b-a3b:thinking" = {
-              name = "Qwen3.5 35B Thinking";
+            "glm-4.7" = {
+              name = "GLM-4.7";
             };
-            "qwen3.5-122b-a10b" = {
-              name = "Qwen3.5 122B";
+            "minimax-m2.5" = {
+              name = "MiniMax-m2.5";
             };
-            "qwen3.5-122b-a10b:thinking" = {
-              name = "Qwen3.5 122B Thinking";
+            "qwen3.5-397b" = {
+              name = "Qwen3.5-397b";
+            };
+            "qwen3.5-397b-thinking" = {
+              name = "Qwen3.5-397b Thinking";
+            };
+            "qwen3.5-122b" = {
+              name = "Qwen3.5-122b";
+            };
+            "qwen3.5-122b-thinking" = {
+              name = "Qwen3.5-122b Thinking";
+            };
+            "qwen3.5-35b" = {
+              name = "Qwen3.5-35b";
+            };
+            "qwen3.5-35b-thinking" = {
+              name = "Qwen3.5-35b Thinking";
+            };
+            "qwen3.5-27b" = {
+              name = "Qwen3.5-27b";
+            };
+            "qwen3.5-27b-thinking" = {
+              name = "Qwen3.5-27b Thinking";
             };
           };
           options = {
-            apiKey = "{file:${config.sops.secrets.nano-gpt_api_key.path}}";
+            baseURL = "{file:${config.sops.secrets.litellm_base_url.path}}";
+            apiKey = "{file:${config.sops.secrets.litellm_api_key.path}}";
           };
         };
       };

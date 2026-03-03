@@ -7,12 +7,11 @@ let
         age.sshKeyPaths = [ "/Users/urio/.ssh/id_ed25519" ];
         defaultSopsFile = ./sops/secrets/secrets.yaml;
         secrets = {
-          openrouter_api_key = { };
           github_token = { };
-          nano-gpt_api_key = { };
           context7_api_key = { };
+          litellm_api_key = { };
+          litellm_base_url = { };
           z-ai_api_key = { };
-          chutes_api_key = { };
         };
       };
     };
