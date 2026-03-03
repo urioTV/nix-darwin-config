@@ -12,6 +12,7 @@ let
           nano-gpt_api_key = { };
           context7_api_key = { };
           z-ai_api_key = { };
+          chutes_api_key = { };
         };
       };
     };
