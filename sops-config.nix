@@ -6,13 +6,13 @@ let
       sops = {
         age.sshKeyPaths = [ "/Users/urio/.ssh/id_ed25519" ];
         defaultSopsFile = ./sops/secrets/secrets.yaml;
-        secrets = {
-          github_token = { };
-          context7_api_key = { };
-          litellm_api_key = { };
-          litellm_base_url = { };
-          z-ai_api_key = { };
-        };
+
+        secrets.openrouter_api_key = { };
+        secrets.context7_api_key = { };
+        secrets.github_token = { };
+        secrets.nano-gpt_api_key = { };
+        secrets.z-ai_api_key = { };
+        secrets.litellm_api_key = { };
       };
     };
 in
