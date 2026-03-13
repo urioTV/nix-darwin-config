@@ -59,9 +59,11 @@
       "google-drive"
 
       # Virtualization & Containers
+      # Replaced docker-desktop with orbstack for containerization
       # "podman-desktop"
       # "container"
       "utm"
+      "orbstack"
 
       # Gaming & Emulation
       "playcover-community"
@@ -69,7 +71,6 @@
       # System Utilities
       "macfuse"
       "sikarugir"
-      "docker-desktop"
     ];
 
     # Command-line tools
