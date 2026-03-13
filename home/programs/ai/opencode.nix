@@ -1,6 +1,39 @@
 { config, pkgs, ... }:
 let
-  litellmProvider = import ./providers/litellm.nix { inherit config; };
+  litellmProvider = {
+    npm = "@ai-sdk/openai-compatible";
+    name = "LiteLLM Proxy";
+    options = {
+      baseURL = "https://litellm.urio.dev/v1";
+      apiKey = "{file:${config.sops.secrets.litellm_api_key.path}}";
+    };
+    models = {
+      # Gemini Family (via Google)
+      "gemini-3.1-pro-preview" = {
+        name = "Gemini 3.1 Pro Preview";
+      };
+      "gemini-3-flash-preview" = {
+        name = "Gemini 3 Flash Preview";
+      };
+
+      # Antigravity Family
+      "antigravity-claude-opus-4-6-thinking" = {
+        name = "Claude Opus 4.6 Thinking (Antigravity)";
+      };
+      "antigravity-claude-sonnet-4-6" = {
+        name = "Claude Sonnet 4.6 (Antigravity)";
+      };
+      "antigravity-gemini-3-flash" = {
+        name = "Gemini 3 Flash (Antigravity)";
+      };
+      "antigravity-gemini-3.1-pro-high" = {
+        name = "Gemini 3.1 Pro High (Antigravity)";
+      };
+      "antigravity-gemini-3.1-pro-low" = {
+        name = "Gemini 3.1 Pro Low (Antigravity)";
+      };
+    };
+  };
   commonModels = {
     model = "zai-coding-plan/glm-5";
     fallback_models = [
