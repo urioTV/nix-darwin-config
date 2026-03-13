@@ -1,4 +1,23 @@
 { config, pkgs, ... }:
+let
+  commonModels = {
+    model = "zai-coding-plan/glm-5";
+    fallback_models = [
+      "github-copilot/claude-sonnet-4.6"
+      "nano-gpt/qwen3.5-122b-a10b:thinking"
+      "openrouter/zhipuai/glm-5"
+    ];
+  };
+
+  gptModels = {
+    model = "openrouter/openai/gpt-5.1-codex-mini";
+    fallback_models = [ "github-copilot/gpt-5-mini" ];
+  };
+
+  miniModels = {
+    model = "github-copilot/gpt-5-mini";
+  };
+in
 {
   xdg.configFile."opencode/oh-my-opencode.json".text = builtins.toJSON {
     google_auth = false;
@@ -23,65 +42,30 @@
 
     agents = {
       # --- Z.ai Coding Plan Agents ---
-      sisyphus = {
-        model = "litellm/glm-5";
-        fallback_models = [
-          "github-copilot/claude-sonnet-4.6"
-          "litellm/qwen3.5-397b"
-        ];
-      };
+      sisyphus = commonModels;
       metis = {
         model = "google/gemini-3.1-pro-preview";
         fallback_models = [
           "github-copilot/claude-sonnet-4.6"
-          "litellm/glm-4.7"
-          "litellm/qwen3.5-397b-thinking"
+          "zai-coding-plan/glm-5"
+          "nano-gpt/qwen3.5-122b-a10b:thinking"
         ];
       };
 
       # --- Dual-Prompt Agents ---
-      prometheus = {
-        model = "litellm/glm-5";
-        fallback_models = [
-          "github-copilot/claude-sonnet-4.6"
-          "litellm/qwen3.5-397b-thinking"
-        ];
-      };
-      atlas = {
-        model = "litellm/glm-5";
-        fallback_models = [
-          "github-copilot/claude-sonnet-4.6"
-          "litellm/qwen3.5-397b-thinking"
-        ];
-      };
+      prometheus = commonModels;
+      atlas = commonModels;
 
       # --- GPT-Native Agents (GPT family only) ---
-      hephaestus = {
-        model = "github-copilot/gpt-5.2-codex";
-        fallback_models = [ "github-copilot/gpt-5-mini" ];
-      };
-      oracle = {
-        model = "github-copilot/gpt-5.1-codex-mini";
-        fallback_models = [ "github-copilot/gpt-5-mini" ];
-      };
-      momus = {
-        model = "github-copilot/gpt-5.1-codex-mini";
-        fallback_models = [ "github-copilot/gpt-5-mini" ];
-      };
+      hephaestus = gptModels;
+      oracle = gptModels;
+      momus = gptModels;
 
       # --- Utility / Subagents (Speed and cost focused) ---
-      "sisyphus-junior" = {
-        model = "litellm/qwen3.5-122b";
-      };
-      explore = {
-        model = "litellm/qwen3.5-122b";
-      };
-      librarian = {
-        model = "litellm/qwen3.5-122b";
-      };
-      "multimodal-looker" = {
-        model = "google/gemini-3-flash-preview";
-      };
+      "sisyphus-junior" = miniModels;
+      explore = miniModels;
+      librarian = miniModels;
+      "multimodal-looker" = miniModels;
     };
   };
 
@@ -90,46 +74,52 @@
     enableMcpIntegration = true;
     settings = {
       provider = {
-        litellm = {
-          npm = "@ai-sdk/openai-compatible";
-          name = "LiteLLM";
+        openrouter = {
+          options = {
+            # baseURL = "https://openrouter.ai/api/v1";
+            apiKey = "{file:${config.sops.secrets.openrouter_api_key.path}}";
+          };
+        };
+        nano-gpt = {
           models = {
-            "glm-5" = {
-              name = "GLM-5";
+            "qwen3.5-35b-a3b" = {
+              name = "Qwen3.5 35B";
             };
-            "glm-4.7" = {
-              name = "GLM-4.7";
+            "qwen3.5-35b-a3b:thinking" = {
+              name = "Qwen3.5 35B Thinking";
             };
-            "minimax-m2.5" = {
-              name = "MiniMax-m2.5";
+            "qwen3.5-122b-a10b" = {
+              name = "Qwen3.5 122B";
             };
-            "qwen3.5-397b" = {
-              name = "Qwen3.5-397b";
-            };
-            "qwen3.5-397b-thinking" = {
-              name = "Qwen3.5-397b Thinking";
-            };
-            "qwen3.5-122b" = {
-              name = "Qwen3.5-122b";
-            };
-            "qwen3.5-122b-thinking" = {
-              name = "Qwen3.5-122b Thinking";
-            };
-            "qwen3.5-35b" = {
-              name = "Qwen3.5-35b";
-            };
-            "qwen3.5-35b-thinking" = {
-              name = "Qwen3.5-35b Thinking";
-            };
-            "qwen3.5-27b" = {
-              name = "Qwen3.5-27b";
-            };
-            "qwen3.5-27b-thinking" = {
-              name = "Qwen3.5-27b Thinking";
+            "qwen3.5-122b-a10b:thinking" = {
+              name = "Qwen3.5 122B Thinking";
             };
           };
           options = {
-            baseURL = "{file:${config.sops.secrets.litellm_base_url.path}}";
+            apiKey = "{file:${config.sops.secrets.nano-gpt_api_key.path}}";
+          };
+        };
+        ramalama = {
+          npm = "@ai-sdk/openai-compatible";
+          name = "RamaLama (Local)";
+          options = {
+            baseURL = "http://127.0.0.1:8080/v1";
+            apiKey = "";
+          };
+          models = {
+            "unsloth/GLM-4.6V-Flash-GGUF:Q6_K" = {
+              name = "GLM-4.6V Flash";
+            };
+            "TeichAI/Qwen3-14B-Claude-4.5-Opus-High-Reasoning-Distill-GGUF:Q4_K_M" = {
+              name = "Qwen3-14B Claude 4.5 Opus Distill";
+            };
+          };
+        };
+        litellm = {
+          npm = "@ai-sdk/openai-compatible";
+          name = "LiteLLM Proxy";
+          options = {
+            baseURL = "https://litellm.urio.dev/v1";
             apiKey = "{file:${config.sops.secrets.litellm_api_key.path}}";
           };
         };
