@@ -10,8 +10,9 @@
 {
   imports = (import-tree ./home).imports;
 
-  # nix.package = pkgs.nix;
-  # nixpkgs.config.allowUnfree = true;
+  home.packages = [
+    pkgs.fastfetch
+  ];
 
   home.activation = {
     resetLaunchPad = lib.hm.dag.entryAfter [ "installPackages" ] ''

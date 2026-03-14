@@ -4,9 +4,6 @@
     # Edytor tekstowy
     micro
 
-    # Informacje o systemie
-    fastfetch
-
     # Multimedia
     ffmpeg_7-full
 
