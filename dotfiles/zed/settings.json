@@ -14,9 +14,9 @@
     "dark": "Catppuccin Mocha"
   },
   "icon_theme": "Material Icon Theme",
-  "ui_font_family": "SFProText Nerd Font",
+  "ui_font_family": "Inter Nerd Font",
   "ui_font_size": 12,
-  "buffer_font_family": "SFMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 12,
 
   // --- AI AGENTS & CONTEXT SERVERS ---

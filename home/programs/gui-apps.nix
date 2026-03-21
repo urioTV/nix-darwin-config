@@ -12,6 +12,7 @@
       package = pkgs.ghostty-bin;
       enableZshIntegration = true;
       settings = {
+        font-family = "JetBrainsMono Nerd Font Mono";
         font-size = 12;
         image-storage-limit = 320000000;
       };

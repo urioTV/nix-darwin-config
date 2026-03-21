@@ -31,7 +31,6 @@ This configuration uses the following flake inputs:
 - **nixpkgs:** NixOS unstable packages for macOS
 - **nix-darwin:** Provides modules and tools for configuring macOS systems with Nix
 - **home-manager:** User environment management
-- **apple-fonts:** Apple font collection for macOS
 
 ## Key Components
 

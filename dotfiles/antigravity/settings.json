@@ -25,7 +25,7 @@
     "git.confirmSync": false,
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "SFMono Nerd Font",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontSize": 12,
     "python.languageServer": "Default",
     "redhat.telemetry.enabled": false,
