@@ -8,21 +8,8 @@
       self.darwinModules.nix-config
       self.darwinModules.nix-overlay
       self.darwinModules.sops-config
-      inputs.home-manager.darwinModules.home-manager
       self.darwinModules.stylix-config
-      {
-        home-manager = {
-          useUserPackages = true;
-          backupFileExtension = "backupnix";
-          extraSpecialArgs = { inherit inputs self; };
-          sharedModules = [
-            self.homeModules.sops-config
-            self.homeModules.stylix-config
-            self.homeModules.nix-overlay
-          ];
-          users.urio = self.homeModules.base;
-        };
-      }
+      self.darwinModules.home-urio
     ];
   };
 }
