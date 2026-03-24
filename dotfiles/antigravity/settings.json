@@ -30,5 +30,6 @@
     "python.languageServer": "Default",
     "redhat.telemetry.enabled": false,
     "json.schemaDownload.enable": false,
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "vscode-office.editorTheme": "Auto"
 }

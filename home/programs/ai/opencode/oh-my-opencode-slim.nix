@@ -2,20 +2,18 @@
 {
   xdg.configFile."opencode/oh-my-opencode-slim.json".text = builtins.toJSON {
     fallback = {
-      enabled = true;
+      enabled = false;
       chains = {
-        orchestrator = [
-          "opencode-go/glm-5"
-          "nano-gpt/qwen3.5-122b-a10b:thinking"
-          "litellm/antigravity-gemini-3.1-pro-high"
-        ];
+        # orchestrator = [
+        #   "opencode-go/glm-5"
+        # ];
         oracle = [
           "opencode-go/kimi-k2.5"
-          "litellm/antigravity-gemini-3.1-pro-high"
+          "litellm/gemini-3.1-pro-preview"
         ];
         designer = [
           "opencode-go/kimi-k2.5"
-          "litellm/antigravity-gemini-3.1-pro-high"
+          "litellm/gemini-3-flash-preview"
         ];
         fixer = [
           "opencode-go/minimax-m2.7"

@@ -9,6 +9,7 @@
     enable = true;
     enableMcpIntegration = true;
     settings = {
+      model = "opencode-go/glm-5";
       plugin = [
         "opencode-gemini-auth@latest"
         "opencode-lmstudio@latest"

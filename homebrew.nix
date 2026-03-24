@@ -37,7 +37,6 @@
 
       # Productivity
       "obsidian"
-      # "logseq"
 
       # Media
       # "spotify"

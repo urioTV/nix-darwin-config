@@ -4,6 +4,11 @@ let
     export GITHUB_PERSONAL_ACCESS_TOKEN="$(cat ${config.sops.secrets.github_token.path})"
     exec ${pkgs.github-mcp-server}/bin/github-mcp-server stdio
   '';
+
+  notionMcpWrapper = pkgs.writeShellScript "notion-mcp-wrapper" ''
+    export NOTION_TOKEN="$(cat ${config.sops.secrets.notion_api_key.path})"
+    exec ${pkgs.bun}/bin/bunx -y @notionhq/notion-mcp-server
+  '';
 in
 {
   programs.mcp = {
@@ -34,6 +39,9 @@ in
       grep_app = {
         type = "remote";
         url = "https://mcp.grep.app";
+      };
+      notion = {
+        command = "${notionMcpWrapper}";
       };
     };
   };
