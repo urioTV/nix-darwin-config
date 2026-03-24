@@ -11,7 +11,7 @@
         # Infrastructure as Code (OpenTofu / Terraform-compatible)
         opentofu
         tofu-ls
-        # Symlink terraform -> tofu dla kompatybilności
+        # Symlink terraform -> tofu for compatibility
         (pkgs.runCommand "terraform-tofu-symlink" { } ''
           mkdir -p $out/bin
           ln -s ${pkgs.opentofu}/bin/tofu $out/bin/terraform
@@ -21,7 +21,7 @@
         ansible
         ansible-lint
 
-        # Pulumi (IaC multi-cloud)
+        # Pulumi (multi-cloud IaC)
         pulumi-bin
 
         # GitHub Actions runner

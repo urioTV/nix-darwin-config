@@ -1,10 +1,10 @@
 # home/programs/ai/skills/skills-import.nix
 #
-# Każdy podfolder w tym katalogu trafia do ~/.config/opencode/skills/<name>/SKILL.md
-# i jest dostępny jako skill w opencode.
+# Each subfolder in this directory maps to ~/.config/opencode/skills/<name>/SKILL.md
+# and is available as a skill in opencode.
 #
-# Aby dodać nowy skill: stwórz folder <nazwa>/SKILL.md obok tego pliku.
-# Nic więcej nie trzeba zmieniać.
+# To add a new skill: create a folder <name>/SKILL.md next to this file.
+# Nothing else needs to be changed.
 { lib, ... }:
 {
   flake.homeModules.ai-opencode-skills-import =
@@ -12,7 +12,7 @@
     let
       skillsDir = ./.;
 
-      # Zbiera wszystkie podfoldery (każdy jest osobnym skillem)
+      # Collects all subfolders (each is a separate skill)
       skillDirs = lib.filterAttrs (name: type: type == "directory") (builtins.readDir skillsDir);
 
       # name: "autocommit"  →  key: "opencode/skills/autocommit/SKILL.md"

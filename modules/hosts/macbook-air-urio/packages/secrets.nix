@@ -4,7 +4,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        # Zarządzanie zaszyfrowanymi sekretami
+        # Encrypted secrets management
         sops
         age
         ssh-to-age

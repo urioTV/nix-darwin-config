@@ -4,27 +4,27 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        # Edytor tekstowy
+        # Text editor
         micro
 
         # Multimedia
         ffmpeg_7-full
 
-        # Systemy plików
+        # Filesystems
         ext4fuse
 
-        # Archiwa i kompresja
+        # Archives and compression
         cabextract
         p7zip
 
-        # GUI dialogi (skrypty powłoki)
+        # GUI dialogs (shell scripts)
         zenity
 
-        # Narzędzia CLI
+        # CLI tools
         rm-improved
         tldr
 
-        # Inne
+        # Other
         rclone
       ];
     };

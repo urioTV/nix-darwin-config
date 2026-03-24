@@ -1,11 +1,11 @@
-# Moduł inicjalizujący opcje flake-parts dla darwin i home-manager
+# flake-parts initialization module for darwin and home-manager
 { lib, inputs, ... }:
 {
   imports = [
     inputs.home-manager.flakeModules.home-manager
   ];
 
-  # Definicja opcji flake.darwinModules
+  # Define flake.darwinModules option
   options.flake.darwinModules = lib.mkOption {
     type = lib.types.lazyAttrsOf lib.types.raw;
     default = { };

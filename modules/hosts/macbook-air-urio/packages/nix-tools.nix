@@ -4,10 +4,10 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        # Formatter Nixa (styl RFC)
+        # Nix formatter (RFC style)
         nixfmt
 
-        # Serwer języka Nix (LSP)
+        # Nix language server (LSP)
         nixd
       ];
     };
