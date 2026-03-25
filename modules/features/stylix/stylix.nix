@@ -34,6 +34,7 @@ in
     imports = [
       sharedStylixConfig
       inputs.stylix.darwinModules.stylix
+      self.darwinModules.fonts
     ];
   };
 

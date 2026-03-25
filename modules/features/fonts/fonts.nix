@@ -3,9 +3,6 @@
   flake.darwinModules.fonts =
     {
       pkgs,
-      config,
-      inputs,
-      system,
       ...
     }:
     {
