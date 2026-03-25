@@ -19,13 +19,6 @@
         self.darwinModules.secrets-packages
       ];
 
-      system.primaryUser = "urio";
-
-      users.users.urio = {
-        name = "urio";
-        home = "/Users/urio";
-      };
-
       security.pam.services.sudo_local.touchIdAuth = true;
 
       security.sudo.extraConfig = ''
