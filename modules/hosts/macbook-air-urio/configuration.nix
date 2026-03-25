@@ -17,6 +17,7 @@
         self.darwinModules.devops-packages
         self.darwinModules.nix-tools
         self.darwinModules.secrets-packages
+        self.darwinModules.other-packages
       ];
 
       security.pam.services.sudo_local.touchIdAuth = true;
