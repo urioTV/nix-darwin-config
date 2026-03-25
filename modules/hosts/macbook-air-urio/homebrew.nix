@@ -46,6 +46,8 @@
           # "stremio"
           "vlc"
           "handbrake-app"
+          "kindle-previewer"
+          "calibre"
 
           # Network
           "protonvpn"
