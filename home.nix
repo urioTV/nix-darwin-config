@@ -37,6 +37,7 @@
           self.homeModules.sops-config
           self.homeModules.stylix-config
           self.homeModules.nix-config
+          self.homeModules.ai
         ];
         users.urio = {
           imports = [ self.homeModules.home-urio ];

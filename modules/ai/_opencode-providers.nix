@@ -3,7 +3,6 @@
   programs.opencode.settings.provider = {
     openrouter = {
       options = {
-        # baseURL = "https://openrouter.ai/api/v1";
         apiKey = "{file:${config.sops.secrets.openrouter_api_key.path}}";
       };
     };
@@ -34,14 +33,12 @@
         apiKey = "{file:${config.sops.secrets.litellm_api_key.path}}";
       };
       models = {
-        # Gemini Family (via Google)
         "gemini-3.1-pro-preview" = {
           name = "Gemini 3.1 Pro Preview";
         };
         "gemini-3-flash-preview" = {
           name = "Gemini 3 Flash Preview";
         };
-        # Claude Code Family
         "claudecode-opus-4.6" = {
           name = "Claude Opus 4.6 (Claude Code)";
         };

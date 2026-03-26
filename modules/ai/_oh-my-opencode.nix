@@ -4,9 +4,6 @@
     fallback = {
       enabled = false;
       chains = {
-        # orchestrator = [
-        #   "opencode-go/glm-5"
-        # ];
         oracle = [
           "opencode-go/kimi-k2.5"
           "litellm/gemini-3.1-pro-preview"
