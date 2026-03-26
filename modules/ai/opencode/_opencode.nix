@@ -5,6 +5,12 @@
   ...
 }:
 {
+  imports = [
+    ./_opencode-providers.nix
+    ./skills/_skills-import.nix
+    ./_oh-my-opencode.nix
+  ];
+
   programs.opencode = {
     enable = true;
     enableMcpIntegration = true;
