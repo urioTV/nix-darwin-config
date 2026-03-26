@@ -23,5 +23,6 @@
 
     # Inne
     rclone
+    fastfetch
   ];
 }

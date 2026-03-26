@@ -1,11 +1,11 @@
 { inputs, ... }:
 let
   sharedSopsConfig =
-    { ... }:
+    { self, ... }:
     {
       sops = {
         age.sshKeyPaths = [ "/Users/urio/.ssh/id_ed25519" ];
-        defaultSopsFile = ./sops/secrets/secrets.yaml;
+        defaultSopsFile = "${self}/sops/secrets/secrets.yaml";
 
         secrets.openrouter_api_key = { };
         secrets.context7_api_key = { };

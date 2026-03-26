@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, self, ... }:
 let
   sharedStylixConfig =
     { pkgs, ... }:
@@ -6,7 +6,7 @@ let
       stylix = {
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-        image = ./media/kosciejo.png;
+        image = "${self}/media/kosciejo.png";
         polarity = "dark";
         fonts = {
           monospace = {

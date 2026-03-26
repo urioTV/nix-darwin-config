@@ -4,7 +4,7 @@ let
     { inputs', ... }:
     {
       nixpkgs.overlays = [
-        (import ./overlay.nix { inherit inputs'; })
+        (import ./_overlay.nix { inherit inputs'; })
       ];
     };
 in

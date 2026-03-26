@@ -51,10 +51,9 @@
       {
         imports = [
           inputs.home-manager.flakeModules.home-manager
-          ./libs/darwin-flake-module.nix
-          ./sops-config.nix
-          ./stylix-config.nix
-          ./nix-config.nix
+          (import-tree ./modules)
+          (import-tree ./libs)
+          ./home.nix
         ];
 
         systems = [ "aarch64-darwin" ];
@@ -75,24 +74,8 @@
               ./configuration.nix
               self.darwinModules.nix-config
               self.darwinModules.sops-config
-              inputs.home-manager.darwinModules.home-manager
               self.darwinModules.stylix-config
-              {
-                home-manager = {
-                  # useGlobalPkgs = true;
-                  useUserPackages = true;
-                  backupFileExtension = "backupnix";
-                  extraSpecialArgs = {
-                    inherit inputs import-tree inputs';
-                  };
-                  sharedModules = [
-                    self.homeModules.sops-config
-                    self.homeModules.stylix-config
-                    self.homeModules.nix-config
-                  ];
-                  users.urio = import ./home.nix;
-                };
-              }
+              self.darwinModules.home-urio
             ];
           }
         );
