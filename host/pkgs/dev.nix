@@ -3,8 +3,8 @@
   environment.systemPackages = with pkgs; [
     # Node.js i TypeScript
     nodejs
-    nodePackages.typescript-language-server
-    nodePackages.typescript
+    typescript-language-server
+    typescript
     vtsls
 
     # Rust
