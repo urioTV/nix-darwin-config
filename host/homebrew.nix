@@ -70,6 +70,7 @@
       # System Utilities
       "macfuse"
       "sikarugir"
+      "obs"
     ];
 
     # Command-line tools
