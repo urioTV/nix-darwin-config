@@ -22,7 +22,7 @@
 
     agents = {
       orchestrator = {
-        model = "opencode-go/glm-5";
+        model = "opencode-go/glm-5.1";
       };
       oracle = {
         model = "opencode-go/kimi-k2.5";

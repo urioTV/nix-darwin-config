@@ -16,5 +16,8 @@
 
     # Git
     gh
+
+    # AI
+    llama-cpp
   ];
 }
