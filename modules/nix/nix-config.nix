@@ -25,6 +25,10 @@ in
       nixpkgs.config.allowUnfree = true;
       nix.enable = false;
       nix.settings = {
+        extra-platforms = [
+          "x86_64-darwin"
+          "aarch64-darwin"
+        ];
         auto-optimise-store = true;
 
         # Determinate Nix specific
