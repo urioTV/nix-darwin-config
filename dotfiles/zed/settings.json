@@ -8,78 +8,143 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --- UI & THEME ---
+  "edit_predictions": {
+    "provider": "copilot",
+    "mode": "eager",
+    "disabled_globs": ["**/.env*", "**/*.pem", "**/*.key"],
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font Mono"],
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
+  },
   "ui_font_family": "Inter Nerd Font",
   "ui_font_size": 12,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_size": 12,
 
   // --- AI AGENTS & CONTEXT SERVERS ---
+  "language_models": {
+    "openai_compatible": {
+      "opencode-go": {
+        "api_url": "https://opencode.ai/zen/go/v1",
+        "available_models": [
+          {
+            "name": "glm-5.1",
+            "display_name": "GLM 5.1",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+          },
+          {
+            "name": "kimi-k2.5",
+            "display_name": "Kimi K2.5",
+            "max_tokens": 256000,
+            "max_output_tokens": 32768,
+          },
+          {
+            "name": "minimax-m2.7",
+            "display_name": "MiniMax M2.7",
+            "max_tokens": 204800,
+            "max_output_tokens": 131072,
+          },
+        ],
+      },
+    },
+  },
   "agent": {
+    "dock": "right",
     "default_profile": "write",
     "default_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "provider": "opencode-go",
+      "model": "glm-5.1",
     },
     "inline_assistant_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "provider": "opencode-go",
+      "model": "kimi-k2.5",
     },
     "commit_message_model": {
-      "provider": "openrouter",
-      "model": "qwen/qwen3-coder"
+      "provider": "opencode-go",
+      "model": "minimax-m2.7",
     },
-    "model_parameters": []
+    "play_sound_when_agent_done": "when_hidden",
+    "tool_permissions": {
+      "default": "confirm",
+    },
   },
   "context_servers": {
-    "mcp-server-context7": {
-      "source": "extension",
-      "enabled": true,
-      "settings": {}
-    }
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+    },
+    "nixos": {
+      "command": "nix",
+      "args": ["run", "github:utensils/mcp-nixos", "--"],
+    },
+    "github": {
+      "command": "github-mcp-server",
+      "args": ["stdio"],
+    },
+    "websearch": {
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+    },
+    "grep_app": {
+      "url": "https://mcp.grep.app",
+    },
   },
 
   // --- LANGUAGE & LSP ---
   "languages": {
     "Nix": {
-      "language_servers": ["nixd", "!nil"]
-    }
+      "language_servers": ["nixd", "!nil"],
+    },
   },
   "lsp": {
     "nixd": {
       "settings": {
         "nixpkgs": {
-          "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.darwinPackages"
+          "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.darwinPackages",
         },
         "formatting": {
-          "command": ["nixfmt"]
+          "command": ["nixfmt"],
         },
         "options": {
           "nixos": {
-            "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.MacBook-Air-Urio.options"
+            "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.MacBook-Air-Urio.options",
           },
           "home_manager": {
-            "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.MacBook-Air-Urio.config.home-manager.users.urio"
-          }
-        }
-      }
-    }
+            "expr": "(builtins.getFlake \"github:urioTV/nix-darwin-config\").darwinConfigurations.MacBook-Air-Urio.config.home-manager.users.urio",
+          },
+        },
+      },
+    },
   },
 
   // --- TERMINAL ---
   "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
     "shell": {
-      "program": "zsh"
-    }
+      "program": "/bin/zsh",
+    },
+    "detect_venv": {
+      "on": {
+        "directories": [".venv", "venv"],
+        "activate_script": "default",
+      },
+    },
   },
 
   // --- OTHER FEATURES ---
-  "features": {
-    "edit_prediction_provider": "zed"
-  }
+  "project_panel": {
+    "dock": "left",
+  },
 }

@@ -25,33 +25,5 @@
         apiKey = "{file:${config.sops.secrets.nano-gpt_api_key.path}}";
       };
     };
-    litellm = {
-      npm = "@ai-sdk/openai-compatible";
-      name = "LiteLLM Proxy";
-      options = {
-        baseURL = "https://litellm.urio.dev/v1";
-        apiKey = "{file:${config.sops.secrets.litellm_api_key.path}}";
-      };
-      models = {
-        "gemini-3.1-pro-preview" = {
-          name = "Gemini 3.1 Pro Preview";
-        };
-        "gemini-3-flash-preview" = {
-          name = "Gemini 3 Flash Preview";
-        };
-        "claudecode-opus-4.6" = {
-          name = "Claude Opus 4.6 (Claude Code)";
-        };
-        "claudecode-opus-4.6-fast" = {
-          name = "Claude Opus 4.6 Fast (Claude Code)";
-        };
-        "claudecode-sonnet-4.6" = {
-          name = "Claude Sonnet 4.6 (Claude Code)";
-        };
-        "claudecode-haiku-4.5" = {
-          name = "Claude Haiku 4.5 (Claude Code)";
-        };
-      };
-    };
   };
 }

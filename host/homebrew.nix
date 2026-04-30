@@ -20,7 +20,7 @@
     casks = [
       # Development
       # "visual-studio-code"
-      # "zed@preview"
+      "zed"
       "antigravity"
 
       # Artificial Intelligence

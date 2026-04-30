@@ -6,11 +6,9 @@
       chains = {
         oracle = [
           "opencode-go/kimi-k2.5"
-          "litellm/gemini-3.1-pro-preview"
         ];
         designer = [
           "opencode-go/kimi-k2.5"
-          "litellm/gemini-3-flash-preview"
         ];
         fixer = [
           "opencode-go/minimax-m2.7"
