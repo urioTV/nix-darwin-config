@@ -74,12 +74,12 @@
       "model": "kimi-k2.5",
     },
     "commit_message_model": {
-      "provider": "opencode-go",
-      "model": "minimax-m2.7",
+      "provider": "copilot",
+      "model": "gpt-5-mini",
     },
     "play_sound_when_agent_done": "when_hidden",
     "tool_permissions": {
-      "default": "confirm",
+      "default": "allow",
     },
   },
   "context_servers": {
@@ -143,8 +143,67 @@
     },
   },
 
-  // --- OTHER FEATURES ---
+  // --- EDITOR BEHAVIOR (VS Code-like) ---
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+  "soft_wrap": "bounded",
+  "preferred_line_length": 120,
+  "tab_size": 2,
+  "cursor_shape": "bar",
+  "cursor_blink": true,
+  "current_line_highlight": "all",
+  "selection_highlight": true,
+  "inlay_hints": {
+    "enabled": true,
+  },
+
+  // --- UI ELEMENTS (VS Code-like) ---
+  "minimap": {
+    "show": "always",
+    "thumb": "always",
+    "current_line_highlight": "line",
+  },
+  "scrollbar": {
+    "axes": {
+      "horizontal": true,
+      "vertical": true,
+    },
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_symbol": true,
+  },
+  "tab_bar": {
+    "show": true,
+  },
+  "tabs": {
+    "show_diagnostics": "errors",
+    "file_icons": true,
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
+  "colorize_brackets": true,
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "gutter": {
+    "line_numbers": true,
+    "folds": true,
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "file_finder": {
+    "modal_max_width": "xlarge",
+  },
+
+  // --- PANELS ---
   "project_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
     "dock": "left",
   },
 }

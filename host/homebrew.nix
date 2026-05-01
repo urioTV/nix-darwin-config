@@ -20,7 +20,7 @@
     casks = [
       # Development
       # "visual-studio-code"
-      "zed"
+      "zed@preview"
       "antigravity"
 
       # Artificial Intelligence
@@ -83,6 +83,8 @@
 
       # Kubernetes
       "minikube"
+
+      # System utilities
     ];
   };
   environment.variables = {
