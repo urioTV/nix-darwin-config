@@ -64,6 +64,7 @@
   },
   "agent": {
     "dock": "right",
+    "default_width": 280,
     "default_profile": "write",
     "default_model": {
       "provider": "opencode-go",
