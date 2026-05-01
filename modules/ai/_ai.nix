@@ -10,11 +10,9 @@ in
     enable = true;
     servers = {
       nixos = {
-        command = "nix";
+        command = "uvx";
         args = [
-          "run"
-          "github:utensils/mcp-nixos"
-          "--"
+          "mcp-nixos"
         ];
       };
       context7 = {

@@ -87,8 +87,8 @@
       "url": "https://mcp.context7.com/mcp",
     },
     "nixos": {
-      "command": "nix",
-      "args": ["run", "github:utensils/mcp-nixos", "--"],
+      "command": "uvx",
+      "args": ["mcp-nixos"],
     },
     "github": {
       "command": "github-mcp-server",
