@@ -75,6 +75,7 @@
               self.darwinModules.nix-config
               self.darwinModules.sops-config
               self.darwinModules.stylix-config
+              self.darwinModules.llama-cpp
               self.darwinModules.home-urio
             ];
           }
