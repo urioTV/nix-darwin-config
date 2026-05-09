@@ -16,5 +16,8 @@
 
     # Git
     gh
+
+    # HuggingFace CLI
+    python3Packages.huggingface-hub
   ];
 }
