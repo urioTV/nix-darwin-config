@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --- UI & THEME ---
+  "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "pi-acp": {
       "type": "registry"
@@ -44,8 +45,9 @@
     "default_width": 280,
     "default_profile": "write",
     "default_model": {
-      "provider": "opencode",
-      "model": "go/glm-5.1",
+      "enable_thinking": true,
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5",
     },
     "inline_assistant_model": {
       "provider": "opencode",
