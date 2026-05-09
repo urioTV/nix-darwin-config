@@ -8,6 +8,11 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --- UI & THEME ---
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    }
+  },
   "edit_predictions": {
     "provider": "copilot",
     "mode": "eager",
