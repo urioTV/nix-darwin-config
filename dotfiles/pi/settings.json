@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.74.0",
-  "defaultProvider": "openrouter",
-  "defaultModel": "deepseek/deepseek-v4-pro",
+  "defaultProvider": "github-copilot",
+  "defaultModel": "claude-haiku-4.5",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:moonpi",
@@ -10,9 +10,9 @@
     "npm:@alexanderfortin/pi-loaded-tools",
     "npm:pi-terminal-theme",
     "npm:pi-claude-style-tools",
-    "npm:pi-hermes-memory",
     "npm:pi-smart-fetch",
-    "npm:@complexthings/pi-dynamic-context-pruning"
+    "npm:@complexthings/pi-dynamic-context-pruning",
+    "git:github.com/urioTV/pi-hermes-memory@feat/projects-memory-reorg"
   ],
   "theme": "terminal"
 }
