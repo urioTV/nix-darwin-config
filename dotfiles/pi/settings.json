@@ -6,6 +6,11 @@
   "packages": [
     "npm:moonpi",
     "npm:@aliou/pi-guardrails",
-    "npm:pi-mcp-adapter"
-  ]
+    "npm:pi-mcp-adapter",
+    "npm:@alexanderfortin/pi-loaded-tools",
+    "npm:pi-terminal-theme",
+    "npm:pi-claude-style-tools",
+    "npm:pi-hermes-memory"
+  ],
+  "theme": "terminal"
 }
