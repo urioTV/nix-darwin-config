@@ -10,7 +10,9 @@
     "npm:@alexanderfortin/pi-loaded-tools",
     "npm:pi-terminal-theme",
     "npm:pi-claude-style-tools",
-    "npm:pi-hermes-memory"
+    "npm:pi-hermes-memory",
+    "npm:pi-smart-fetch",
+    "npm:@complexthings/pi-dynamic-context-pruning"
   ],
   "theme": "terminal"
 }
