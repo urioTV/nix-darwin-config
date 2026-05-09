@@ -14,6 +14,7 @@
         ./_ai.nix
         self.homeModules.ai-gemini-cli
         self.homeModules.ai-opencode
+        self.homeModules.ai-pi
       ];
     };
 }
