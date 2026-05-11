@@ -10,6 +10,8 @@
 !extensions/*.ts
 !extensions/tool-collapse/
 !extensions/tool-collapse/config.json
+!extensions/lsp/
+!extensions/lsp/config.json
 !skills/
 !skills/autocommit/
 !skills/autocommit/SKILL.md
