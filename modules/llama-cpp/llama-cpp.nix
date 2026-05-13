@@ -24,13 +24,13 @@ in
       ];
 
       environment.variables = {
-        # TurboQuant KV cache: turbo3(keys) + turbo4(values)
-        # 4.9×/3.8× kompresja vs q8_0 – przy 8K oknie ~58MB zamiast ~289MB
-        LLAMA_ARG_CACHE_TYPE_K = "turbo3";
-        LLAMA_ARG_CACHE_TYPE_V = "turbo4";
+        # RotorQuant/IsoQuant KV cache: iso3(keys) + iso3(values)
+        # 3-bit rotation-based KV cache compression from the RotorQuant-enabled fork.
+        LLAMA_ARG_CACHE_TYPE_K = "q8_0";
+        LLAMA_ARG_CACHE_TYPE_V = "q8_0";
 
         # Context window
-        LLAMA_ARG_CTX_SIZE = "8192";
+        # LLAMA_ARG_CTX_SIZE = "8192";
 
         # Batch sizes
         LLAMA_ARG_BATCH = "512";

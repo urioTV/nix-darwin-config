@@ -5,7 +5,7 @@
     micro
 
     # Multimedia
-    ffmpeg_7-full
+    ffmpeg
 
     # Systemy plików
     ext4fuse
