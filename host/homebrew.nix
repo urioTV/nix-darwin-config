@@ -66,6 +66,7 @@
 
       # Gaming & Emulation
       "playcover-community"
+      "prismlauncher"
 
       # System Utilities
       "macfuse"
