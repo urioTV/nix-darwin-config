@@ -23,9 +23,6 @@
       "zed@preview"
       "antigravity"
 
-      # Artificial Intelligence
-      "lm-studio"
-
       # Web browsers
       # "microsoft-edge"
       "zen"
@@ -54,8 +51,10 @@
       "syncthing-app"
       "qbittorrent"
       "keka"
-      # "jdownloader"
       "google-drive"
+      "onyx"
+      "pearcleaner"
+      "omnidisksweeper"
 
       # Virtualization & Containers
       # Replaced docker-desktop with orbstack for containerization
