@@ -4,8 +4,8 @@ let
   llama-cpp-src = final.fetchFromGitHub {
     owner = "ggml-org";
     repo = "llama.cpp";
-    rev = "39cf5d61915769124b7efbbfa69c46f19a6363ee";
-    hash = "sha256-t/zMw23dD68ElCsho0RL5qh6C5D1QpwMuyL9KKTi00Q=";
+    rev = "053e01dff68dc3419ae8337ea566722138e4376c";
+    hash = "sha256-4tq3TdA0MeR/mHk0cEDBBlQdyjjAkOzbun0QB0SasE0=";
     leaveDotGit = true;
     postFetch = ''
       git -C "$out" rev-parse --short HEAD > $out/COMMIT
@@ -22,14 +22,57 @@ in
     npmRoot = "tools/ui";
     npmDepsHash = "sha256-WaEePrEZ7O/7deP2KJhe0AwiSKYA8HOqETmMHUkmBe0=";
 
-    # LLAMA_BUILD_NUMBER must be a numeric C++ int. The package version contains
-    # the short commit (for example 0-39cf5d6), so do not let CMake derive the
-    # build number from it.
+    # Keep this build focused on Apple Silicon/macOS: Metal + Accelerate only.
+    # CUDA/ROCm/OpenCL/Vulkan/RPC add irrelevant dependencies or code paths for
+    # this host, while tests/examples are not installed or needed at runtime.
+    # GGML_NATIVE stays disabled to preserve Nix reproducibility.
     cmakeFlags =
+      let
+        managedFlags = [
+          "CMAKE_C_FLAGS"
+          "CMAKE_OSX_ARCHITECTURES"
+          "GGML_ACCELERATE"
+          "GGML_CLBLAST"
+          "GGML_CUDA"
+          "GGML_HIP"
+          "GGML_METAL"
+          "GGML_METAL_EMBED_LIBRARY"
+          "GGML_NATIVE"
+          "GGML_RPC"
+          "GGML_VULKAN"
+          "LLAMA_BUILD_EXAMPLES"
+          "LLAMA_BUILD_NUMBER"
+          "LLAMA_BUILD_TESTS"
+          "LLAMA_METAL_EMBED_LIBRARY"
+        ];
+      in
       builtins.filter (
-        f: !(final.lib.hasPrefix "-DLLAMA_BUILD_NUMBER" (if builtins.isString f then f else ""))
+        f:
+        let
+          flag = if builtins.isString f then f else "";
+        in
+        !(builtins.any (name: final.lib.hasPrefix "-D${name}" flag) managedFlags)
       ) old.cmakeFlags
-      ++ [ "-DLLAMA_BUILD_NUMBER:STRING=0" ];
+      ++ [
+        # LLAMA_BUILD_NUMBER must be a numeric C++ int. The package version
+        # contains the short commit (for example 0-39cf5d6), so do not let CMake
+        # derive the build number from it.
+        "-DLLAMA_BUILD_NUMBER:STRING=0"
+
+        "-DCMAKE_C_FLAGS:STRING=-D__ARM_FEATURE_DOTPROD=1"
+        "-DCMAKE_OSX_ARCHITECTURES:STRING=arm64"
+        "-DGGML_ACCELERATE:BOOL=ON"
+        "-DGGML_CLBLAST:BOOL=OFF"
+        "-DGGML_CUDA:BOOL=OFF"
+        "-DGGML_HIP:BOOL=OFF"
+        "-DGGML_METAL:BOOL=ON"
+        "-DGGML_METAL_EMBED_LIBRARY:BOOL=ON"
+        "-DGGML_NATIVE:BOOL=OFF"
+        "-DGGML_RPC:BOOL=OFF"
+        "-DGGML_VULKAN:BOOL=OFF"
+        "-DLLAMA_BUILD_EXAMPLES:BOOL=OFF"
+        "-DLLAMA_BUILD_TESTS:BOOL=OFF"
+      ];
 
     preConfigure = ''
       prependToVar cmakeFlags "-DLLAMA_BUILD_COMMIT:STRING=$(cat COMMIT)"
